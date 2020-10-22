@@ -17,7 +17,7 @@ projects = os.scandir('Practice')
 for folder in projects:
    if not folder.is_dir(): continue
    folder = folder.name
-   table += f'| Практическая {folder} - [[С++]](./Practice/{folder}/C++/) [[Python]](./Practice/{folder}/Python) |  |\n'
+   table += f'| Практическая {folder} - [[С++]](./Practice/{folder}/C++/{folder}.cpp) [[Python]](./Practice/{folder}/Python/{folder}.py) |  |\n'
 
 readme = open('README.md', 'w')
 readme.write(README_BASE + table)
