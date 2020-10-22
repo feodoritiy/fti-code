@@ -21,3 +21,4 @@ for folder in projects:
 
 readme = open('README.md', 'w')
 readme.write(README_BASE + table)
+readme.close()
