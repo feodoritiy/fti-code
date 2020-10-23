@@ -15,5 +15,12 @@
 | Практическая 05 - [[С++]](./Practice/05/C++/05.cpp) [[Python]](./Practice/05/Python/05.py) |  |
 | Практическая 06 - [[С++]](./Practice/06/C++/06.cpp) [[Python]](./Practice/06/Python/06.py) |  |
 | Практическая 07 - [[С++]](./Practice/07/C++/07.cpp) [[Python]](./Practice/07/Python/07.py) |  |
+| Практическая 08 - [[С++]](./Practice/08/C++/08.cpp) [[Python]](./Practice/08/Python/08.py) |  |
 | Практическая 09 - [[С++]](./Practice/09/C++/09.cpp) [[Python]](./Practice/09/Python/09.py) |  |
 | Практическая 10 - [[С++]](./Practice/10/C++/10.cpp) [[Python]](./Practice/10/Python/10.py) |  |
+| Практическая 11 - [[С++]](./Practice/11/C++/11.cpp) [[Python]](./Practice/11/Python/11.py) |  |
+| Практическая 12 - [[С++]](./Practice/12/C++/12.cpp) [[Python]](./Practice/12/Python/12.py) |  |
+| Практическая 13 - [[С++]](./Practice/13/C++/13.cpp) [[Python]](./Practice/13/Python/13.py) |  |
+| Практическая 14 - [[С++]](./Practice/14/C++/14.cpp) [[Python]](./Practice/14/Python/14.py) |  |
+| Практическая 15 - [[С++]](./Practice/15/C++/15.cpp) [[Python]](./Practice/15/Python/15.py) |  |
+| Практическая 16 - [[С++]](./Practice/16/C++/16.cpp) [[Python]](./Practice/16/Python/16.py) |  |
