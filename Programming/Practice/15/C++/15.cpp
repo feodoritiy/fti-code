@@ -1,43 +1,42 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <stdlib.h>
 #include "./../../practice.cpp"
 
 int main () {
-	description("frity production 30.10.2020\n===========================");
+	description("frity production 30.10.2020");
 
 START:
 	std::srand(time(0));
 
-	int n = rand() * 100 / RAND_MAX;
+	int n = rand() % 101;
 
 	int guessing;
 	bool showResult = true;
-	int crutch = -4;
 
 	for (int i = 0; i < 5; i++)
 	{
+		std::cout << i + 1 << '/' << 5 << ": ";
 		std::cin >> guessing;
 
-		if (guessing < n && crutch)
-			std::cout << "Çàãàäàííîå ÷èñëî ÁÎËÜØÅ" << std::endl;
-		if (guessing > n && crutch)
-			std::cout << "Çàãàäàííîå ÷èñëî Ìåíüøå" << std::endl;
-		if (guessing == n && crutch)
+		if (guessing < n)
+			std::cout << "Ð—Ð°Ð³Ð°Ð´Ð°Ð½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð‘ÐžÐ›Ð¬Ð¨Ð•" << std::endl;
+		if (guessing > n)
+			std::cout << "Ð—Ð°Ð³Ð°Ð´Ð°Ð½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ ÐœÐµÐ½ÑŒÑˆÐµ" << std::endl;
+		if (guessing == n)
 		{
-			std::cout << "Ïîçäðàâëÿþ! Âû óãàäàëè" << std::endl;
+			std::cout << "ÐŸÐ¾Ð·Ð´Ñ€Ð°Ð²Ð»ÑÑŽ! Ð’Ñ‹ ÑƒÐ³Ð°Ð´Ð°Ð»Ð¸" << std::endl;
 			showResult = false;
 			break;
 		}
-
-		crutch++;
 	}
 
 	if (showResult)
-		std::cout << "Âû ïðîèãðàëè. Áûëî çàãàäàíî ÷èñëî " << n << std::endl;
+		std::cout << "Ð’Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð³Ñ€Ð°Ð»Ð¸. Ð‘Ñ‹Ð»Ð¾ Ð·Ð°Ð³Ð°Ð´Ð°Ð½Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ " << n << std::endl;
 
 	int answ = 0;
-	std::cout << "Èãðàåì ñíîâà? (1 - Äà): ";
+	std::cout << "Ð˜Ð³Ñ€Ð°ÐµÐ¼ ÑÐ½Ð¾Ð²Ð°? (1 - Ð”Ð°): ";
 	std::cin >> answ;
 
 	if (answ == 1)
