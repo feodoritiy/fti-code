@@ -85,7 +85,7 @@ class MazeChar(str):
    
 class Maze:
    CHARS = {
-      'WALL': MazeChar(r'🬀',   'fail'),
+      'WALL': MazeChar(r'░',   'fail'),
       'PLAYER': MazeChar(r'#', 'blue bold'),
       'STEP': MazeChar(r'•',   'normal'),
       'PREV': MazeChar(r'⋅',   'cyan'),
