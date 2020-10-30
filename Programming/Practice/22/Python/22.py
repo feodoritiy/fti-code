@@ -266,7 +266,7 @@ print(xstr('Добро пожаловать в <blue|Лабиринт> от <pur
 s = xstr('Введите координаты игрока <yellow|(x y)>: ')
 x, y = map(int, input(s).split(' '))
 
-player = maze.player(x-1, y-1)
+player = maze.player(x, y)
 maze.render()
 if (not player):
    maze.move_cursor_down()
@@ -274,6 +274,7 @@ if (not player):
    exit()
 
 exits = maze.waterfall()
+exits.sort()
 exits = ' '.join(exits)
 Console.move_cursor(0, maze.height+2)
 print(xstr(f'Найдены выходы: <purple|{exits}>'))
