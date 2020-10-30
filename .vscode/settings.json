@@ -4,6 +4,9 @@
     "*.html": "html",
     "ostream": "cpp",
     "random": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "iostream": "cpp",
+    "string": "cpp",
+    "initializer_list": "cpp"
   }
 }
