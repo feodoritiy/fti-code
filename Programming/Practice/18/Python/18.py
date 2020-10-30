@@ -1,22 +1,22 @@
 # Stupid Sigizmund
 
 words = ['hallo', 'klempner', 'das', 'ist', 'fantastisch', 'fluggegecheimen']
-letters = {}
+
+meet = {}
 
 for word in words:
    for letter in word:
-      if letter in letters:
-         letters[letter] += 1
+      if letter in meet:
+         meet[letter] += 1
       else:
-         letters[letter] = 1
+         meet[letter] = 1
          
-len_letters = len(letters.keys())
-for letter in letters.keys():
-   letters[letter] /= len_letters
+total_letters = len(''.join(words))
 
 stop_word = input('Стоп слово: ')
-res = 1
+res = 1 / (total_letters ** len(stop_word))
+print(meet)
 for letter in stop_word:
-   res *= letters[letter]
+   res *= meet[letter]
    
 print('Вероятность угадать:', res)
