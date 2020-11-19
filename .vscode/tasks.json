@@ -6,12 +6,15 @@
     {
       "type": "shell",
       "label": "g++ build active file",
-      "command": "/usr/bin/g++",
+      "command": "g++",
       "args": [
+        "-std=c++17",
+        "-lstdc++fs",
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-lstdc++fs"
       ],
       "options": {
         "cwd": "/usr/bin"
