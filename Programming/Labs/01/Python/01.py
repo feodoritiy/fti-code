@@ -1,4 +1,3 @@
-from base64 import encode
 from tkinter import *
 import requests
 from requests.exceptions import InvalidSchema

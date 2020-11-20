@@ -6,9 +6,10 @@
 #pragma once
 void askUrl(std::string domain, std::string path, std::function<void(Result &)> okCallback)
 {
+   Headers headers = {{"Accept-Encoding", "gzip, deflate"}};
    printf("\nAsking %s%s\n", domain.c_str(), path.c_str());
    Client client(domain.c_str());
-   auto res = client.Get(path.c_str());
+   auto res = client.Get(path.c_str(), headers);
    if (res)
    {
       if (res->status == 200)

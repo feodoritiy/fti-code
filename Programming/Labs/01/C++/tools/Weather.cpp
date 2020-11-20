@@ -8,16 +8,13 @@
 class Weather
 {
 public:
-   float temp;
+   int temp;
    std::string descr;
    std::string icon;
    Weather() {}
    Weather(json weatherData)
    {
-      temp = weatherData["temp"].get<float>();
-      //std::cout << weatherData.find("weather").value().begin().value();
-      //std::cout << weatherData["weather"]["0"];
-      //std::cout << weatherData["weather"]["0"]["description"];
+      temp = (int)weatherData["temp"].get<float>();
       descr = weatherData["weather"][0]["description"].get<std::string>();
       icon = weatherData["weather"][0]["icon"].get<std::string>();
    }
