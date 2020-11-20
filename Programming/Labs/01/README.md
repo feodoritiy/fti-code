@@ -329,10 +329,15 @@ Label(bottom, bg="#ffbd37").pack(fill=X)
 root.mainloop()
 ```
 6. Скриншот клиентского приложения:
+
 ![](./images/widget-client.png)
+
 7. Скриншот браузерного виджета:
+
 ![](./images/widget-server.png)
+
 ![](./images/widget-server-browser.png)
+
 
 Каталоги:
 [[C++]](./C++) [[Python]](./Python)
