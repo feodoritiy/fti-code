@@ -9,6 +9,7 @@
       "command": "g++",
       "args": [
         "-std=c++17",
+        "-pthread",
         "-lstdc++fs",
         "-g",
         "${file}",
@@ -27,12 +28,45 @@
         "isDefault": true
       },
       "presentation": {
-        "echo": true,
-        "reveal": "silent",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": false
+        //"echo": true,
+        //"reveal": "silent",
+        "focus": true,
+        //"panel": "shared",
+        //"showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "01 G++ Build",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-pthread",
+        "-lstdc++fs",
+        "-g",
+        "${workspaceFolder}/Programming/Labs/01/C++/01.cpp",
+        "-o",
+        "${workspaceFolder}/Programming/Labs/01/C++/01",
+        "-lstdc++fs"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        //"echo": true,
+        //"reveal": "silent",
+        "focus": true,
+        //"panel": "shared",
+        //"showReuseMessage": true,
+        "clear": true
       }
     }
   ]
