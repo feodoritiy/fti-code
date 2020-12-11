@@ -35,6 +35,31 @@ std::vector<std::string> split(const std::string &str, const std::string &delim)
   return tokens;
 }
 
+template <typename T>
+void printVector(std::vector<T> arr, std::string before = "", std::string delim = " ") {
+  std::cout << before;
+  for (auto& it : arr)
+    std::cout << it << delim;
+  //std::cout << std::endl;
+}
+
+template <typename T>
+std::vector<T> sliceVector(std::vector<T> arr, int startIndex, int endIndex)
+{
+  size_t len = arr.size();
+  if (startIndex < 0)
+    startIndex = len + startIndex;
+  if (endIndex <= 0)
+    endIndex = len + endIndex - 1;
+
+  auto start = arr.begin() + startIndex;
+  auto end = arr.begin() + endIndex + 1;
+
+  std::vector<T> result(endIndex - startIndex + 1);
+  copy(start, end, result.begin());
+  return result;
+}
+
 void header()
 {
   std::setlocale(LC_ALL, "Russian");
