@@ -4,8 +4,7 @@
 
 using namespace std;
 
-int main () {
-	int n; cout << "Введите число: ", cin >> n; // number to be factorized
+void print_factorization(unsigned int n) {
 	vector <pair<int, int>> ans; // verctor for data storage
 	for (int i = 2; i * i <= n; i++) { // for i < sqrt(n)
 		if (n % i == 0) { // if i is divider
@@ -32,6 +31,12 @@ int main () {
 			printf(format.c_str(), ans[i].first);
 		}
 	}
+}
+
+int main() {
+	int n; cout << "Введите число: ", cin >> n; // number to be factorized
+
+	print_factorization(n);
 	
 	printf("\n");
 	return 0;
