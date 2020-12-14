@@ -1,0 +1,13 @@
+{
+   "response": {
+      "text": "Обращайся ещё",
+      "tts": "Обращ+айся ещ+ё.",
+      "buttons": [
+         {
+            "title": "Помощь"
+         }
+      ],
+      "end_session": false
+   },
+   "version": "1.0"
+}

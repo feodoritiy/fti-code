@@ -47,20 +47,20 @@
       "preLaunchTask": "g++ build active file"
     },
     {
-      "name": "01 C++ Run",
+      "name": "02 C++ Run",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/Programming/Labs/01/C++/01",
+      "program": "${workspaceFolder}/Programming/Labs/02/C++/02",
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "preLaunchTask": "01 G++ Build",
+      "preLaunchTask": "02 G++ Build",
     },
     {
-      "name": "01 C++ Debug",
+      "name": "02 C++ Debug",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/Programming/Labs/01/C++/01",
+      "program": "${workspaceFolder}/Programming/Labs/02/C++/02",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -79,7 +79,7 @@
         "MIMode": "gdb",
         "miDebuggerPath": "/usr/bin/gdb"
       },
-      "preLaunchTask": "01 G++ Build"
+      "preLaunchTask": "02 G++ Build"
     },
   ]
 }

@@ -1,0 +1,194 @@
+{
+   // See https://go.microsoft.com/fwlink/?LinkId=733558
+   // for the documentation about the tasks.json format
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "type": "shell",
+         "label": "g++ build active file",
+         "command": "g++",
+         "args": [
+            "-std=c++17",
+            "-pthread",
+            "-lstdc++fs",
+            "-g",
+            "${file}",
+            "-o",
+            "${fileDirname}/${fileBasenameNoExtension}",
+            "-lstdc++fs"
+         ],
+         "options": {
+            "cwd": "/usr/bin"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "presentation": {
+            "focus": true,
+            "clear": true
+         }
+      },
+      {
+         "label": "G++ Compile Current Header",
+         "type": "shell",
+         "command": "g++",
+         "args": [
+            "-std=c++17",
+            "-pthread",
+            "-lstdc++fs",
+            "-Wall",
+            "${file}",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "group": "build",
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+         "options": {
+            "cwd": "/usr/bin"
+         },
+      },
+      {
+         "label": "G++ Compile Current",
+         "type": "shell",
+         "command": "/usr/bin/time",
+         "args": [
+            "-p",
+            "sh",
+            "-c",
+            "\"",
+            "g++",
+            "-std=c++17",
+            "-pthread",
+            "-lstdc++fs",
+            //"-H",
+            "-Wall",
+            "-o",
+            "${workspaceFolder}/C++/bin/_${fileBasenameNoExtension}.o",
+            "-I",
+            "${workspaceFolder}/C++/include",
+            "-c",
+            "${fileDirname}/${fileBasenameNoExtension}.cpp",
+            "\"",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+         "options": {
+            "cwd": "/usr/bin"
+         },
+      },
+      {
+         "label": "G++ Compile Main",
+         "type": "shell",
+         "command": "/usr/bin/time",
+         "args": [
+            "-p",
+            "sh",
+            "-c",
+            "\"",
+            "g++",
+            "-std=c++17",
+            "-pthread",
+            "-lstdc++fs",
+            //"-H",
+            "-Wall",
+            "-o",
+            "${workspaceFolder}/C++/bin/main.o",
+            "-I",
+            "${workspaceFolder}/C++/include",
+            "-c",
+            "${workspaceFolder}/C++/main.cpp",
+            "\"",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "group": "build",
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+         "options": {
+            "cwd": "/usr/bin"
+         },
+      },
+      {
+         "label": "G++ Link Objects",
+         "type": "shell",
+         "command": "/usr/bin/time",
+         "args": [
+            "-p",
+            "sh",
+            "-c",
+            "\"",
+            "g++",
+            "-std=c++17",
+            "-pthread",
+            "-lstdc++fs",
+            "-g",
+            "-o",
+            "${workspaceFolder}/C++/bin/build",
+            //"-L",
+            //"${workspaceFolder}/C++/include",
+            "",
+            "${workspaceFolder}/C++/bin/*.o",
+            "\"",
+         ],
+         "options": {
+            "cwd": "/usr/bin"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+      },
+      {
+         "label": "G++ Build Main",
+         "type": "shell",
+         "dependsOrder": "sequence",
+         "dependsOn": [
+            //"G++ Compile Main",
+            "G++ Link Objects",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+      },
+      {
+         "label": "G++ Build Current then Main",
+         "type": "shell",
+         "dependsOrder": "sequence",
+         "dependsOn": [
+            "G++ Compile Current",
+            //"G++ Compile Main",
+            "G++ Link Objects",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+      }
+   ]
+}

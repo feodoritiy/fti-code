@@ -1,0 +1,9 @@
+{
+   "response": {
+      "text": "Корзина пуста",
+      "tts": "Корз+ина пуст+а",
+      "buttons": [],
+      "end_session": false
+   },
+   "version": "1.0"
+}

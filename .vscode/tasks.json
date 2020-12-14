@@ -38,16 +38,18 @@
     },
     {
       "type": "shell",
-      "label": "01 G++ Build",
+      "label": "02 G++ Build",
       "command": "g++",
       "args": [
         "-std=c++17",
         "-pthread",
         "-lstdc++fs",
         "-g",
-        "${workspaceFolder}/Programming/Labs/01/C++/01.cpp",
+        "${workspaceFolder}/Programming/Labs/02/C++/02.cpp",
+        "-B",
+        "${workspaceFolder}/Programming/Labs/02/C++/include",
         "-o",
-        "${workspaceFolder}/Programming/Labs/01/C++/01",
+        "${workspaceFolder}/Programming/Labs/02/C++/02",
         "-lstdc++fs"
       ],
       "options": {

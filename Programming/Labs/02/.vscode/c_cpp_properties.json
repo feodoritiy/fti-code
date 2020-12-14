@@ -1,0 +1,34 @@
+{
+   "env": {
+      "myDefaultIncludePath": [
+         "${workspaceFolder}/C++",
+         "${workspaceFolder}/C++/include/**"
+      ],
+      "myCompilerPath": "/usr/bin/g++-10"
+   },
+   "configurations": [
+      {
+         "name": "Linux",
+         "intelliSenseMode": "clang-x64",
+         "includePath": [
+            "${myDefaultIncludePath}"
+            //"/another/path"
+         ],
+         "forcedInclude": [
+            //"${workspaceFolder}/include/config.h"
+         ],
+         "compilerPath": "/usr/bin/g++-10",
+         "cStandard": "c17",
+         "cppStandard": "c++20",
+         //"compileCommands": "/path/to/compile_commands.json",
+         "browse": {
+            "path": [
+               "${workspaceFolder}"
+            ],
+            "limitSymbolsToIncludedHeaders": true,
+            "databaseFilename": ""
+         }
+      }
+   ],
+   "version": 4
+}

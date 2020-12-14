@@ -1,0 +1,14 @@
+{
+   "response": {
+      "text": "Молчу, молчу",
+      "tts": "Молч+у, <[250]> молч+у",
+      "buttons": [
+         {
+            "title": "Помощь",
+            "payload": {}
+         }
+      ],
+      "end_session": false
+   },
+   "version": "1.0"
+}

@@ -1,0 +1,13 @@
+{
+   "response": {
+      "text": "Хорошо",
+      "tts": "Хорош+о",
+      "buttons": [
+         {
+            "title": "Помощь"
+         }
+      ],
+      "end_session": false
+   },
+   "version": "1.0"
+}
