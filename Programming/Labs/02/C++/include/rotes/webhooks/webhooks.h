@@ -9,4 +9,8 @@ using namespace httplib;
 
 extern HooksPage webhooksPage;
 
-void webhooksRoteHandler(const Request& req, Response& res);
+namespace RouteWebhooks {
+
+   void Handler(const Request& req, Response& res);
+
+} // namespace RouteWebhooks

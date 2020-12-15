@@ -7,7 +7,6 @@ using json = nlohmann::json;
 
 #include <HooksPage/HooksPage.h>
 HooksPage webhooksPage("/webhooks-page.html", "/webhook-single.html");
-//HooksPage webhooksPage;
 
 Server server;
 const int SERVER_PORT = 1234;
@@ -20,8 +19,10 @@ const int SERVER_PORT = 1234;
 int main(int argc, char** argv)
 {
 	server
-		.Post("/", RouteRoot::Handler)
-		.Post("/webhooks", webhooksRoteHandler);
+		.Post("/",
+			RouteRoot::Handler)
+		.Post("/webhooks",
+			RouteWebhooks::Handler);
 
 	//STARTING SERVER
 	std::cout << "Server served on localhost:" << SERVER_PORT << "\n";

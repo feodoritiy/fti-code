@@ -7,6 +7,8 @@ import datetime
 
 app = Flask(__name__)
 
+pwd = os.path.abspath(os.path.dirname(__file__))
+
 #BUFFER_SIZE = 1000
 BUFFER_SIZE = 0
 buffer = []
@@ -21,7 +23,7 @@ def index():
       buffer += [request.json]
       print('req.body:', buffer[-1])
       if (len(buffer) > BUFFER_SIZE):
-         saveExcel()
+         save_excel()
          buffer = []
          
       return 'OK'
@@ -30,10 +32,10 @@ def index():
       return 'Это GET запрос'
 
 
-def saveExcel():
+def save_excel():
    global buffer
    
-   STORAGE_FILE = './Python/data.xlsx'
+   STORAGE_FILE = os.path.join(pwd, 'data.xlsx')
    
    book = None
    # create or open book
@@ -68,8 +70,6 @@ def saveExcel():
    
    book.save(STORAGE_FILE)
    book.close()
-
-saveExcel()   
 
 if __name__ == '__main__':
    app.run()
