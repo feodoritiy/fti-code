@@ -48,7 +48,9 @@
 ### Информация о проекте
 
 Стандарт С++: `С++20`
+
 Компилятор: `g++-10` (gcc v10.2.0)
+
 ОС: `Ubuntu 20.04.01 LTS`
 
 ## Выполнение работы
@@ -58,7 +60,7 @@
 <details><summary>Показать изображение</summary>
 <p>
 <p align="center">
-<img src="images/feora-logo.png">
+<img src="images/feora-logo.png"><br>
 Рис. 1. Логотип для навыка
 </p>
 </p>
@@ -94,13 +96,13 @@
 
 6. Скриншот клиентского приложения:
 <p align="center">
-<img src="./images/widget-client.png">
+<img src="./images/widget-client.png"><br>
 Рис. 2. Виджет клиента
 </p>
 
 7. Скриншот браузерного виджета:
 <p align="center">
-<img src="./images/widget-server-browser.png">
+<img src="./images/widget-server-browser.png"><br>
 Рис. 3. Виджет в браузере
 </p>
 
