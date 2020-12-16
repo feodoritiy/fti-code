@@ -49,7 +49,7 @@
 
 Разработка проекта началась с регистрации навыка для Алисы. Название навыка выбрано `feora cart`, поскольку у меня были наработки для этого имени и был логотип.
 
-<u onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display?'':'none'">Показать изображение</u>
+<a href="#" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display?'':'none'">Показать изображение</a>
 <div style="display: none">
    <center>
    <img src="https://cdn.cnn.com/cnnnext/dam/assets/190718181632-cats-movie-trailer-full-169.jpg" /><br/>
