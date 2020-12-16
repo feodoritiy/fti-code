@@ -51,9 +51,10 @@
 
 <details><summary>Показать изображение</summary>
 <p>
+<p align="center">
 <img src="https://cdn.cnn.com/cnnnext/dam/assets/190718181632-cats-movie-trailer-full-169.jpg">
-<br>
-<center>Рис. 1. Первая картинка</center>
+Рис. 1. Первая картинка
+</p>
 </p>
 </details>
 
@@ -84,14 +85,16 @@
 ### Обязательная информация
 
 6. Скриншот клиентского приложения:
+<p align="center">
 <img src="./images/widget-client.png">
-<br>
-<center>Рис. 2. Виджет клиента</center>
+Рис. 2. Виджет клиента
+</p>
 
 7. Скриншот браузерного виджета:
+<p align="center">
 <img src="./images/widget-server-browser.png">
-<br>
-<center>Рис. 3. Виджет в браузере</center>
+Рис. 3. Виджет в браузере
+</p>
 
 <style>
 a {
