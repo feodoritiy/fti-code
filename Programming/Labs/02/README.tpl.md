@@ -71,6 +71,11 @@ toggle >> button:"Показать изображение",
       src:"./images/widget-server-browser.png", 
       title: "Виджет в браузере" ::
 
+<style>
+a {
+   color: red;
+}
+</style>
 
 :: folders ::
 ## Вывод

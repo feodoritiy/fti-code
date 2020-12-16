@@ -95,6 +95,11 @@
    <span>Рис. 3. Виджет в браузере</span>
 </center>
 
+<style>
+a {
+   color: red;
+}
+</style>
 
 Директории:
 [[C++]](./C++) [[Python]](./Python)
