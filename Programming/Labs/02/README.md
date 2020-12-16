@@ -49,13 +49,14 @@
 
 Разработка проекта началась с регистрации навыка для Алисы. Название навыка выбрано `feora cart`, поскольку у меня были наработки для этого имени и был логотип.
 
-<a href="#" onclick="event.preventDefault();this.nextElementSibling.style.display=this.nextElementSibling.style.display?'':'none'">Показать изображение</a>
-<div style="display: none">
-   <center>
+<details><summary>Показать изображение</summary>
+<p>
+<center>
    <img src="https://cdn.cnn.com/cnnnext/dam/assets/190718181632-cats-movie-trailer-full-169.jpg" /><br/>
    <span>Рис. 1. Первая картинка</span>
 </center>
-</div>
+</p>
+</details>
 
 Начальным этапом стала адаптация проекта лабораторной работы №1 под нужды этой работы. Важным аспектом явилась настойка компиляции и линковки исходного кода, что позволило значительно сократить время компиляции, тем самым ускорив процесс разработки.
 
