@@ -12,6 +12,17 @@
       "console": "integratedTerminal"
     },
     {
+      "name": "Python: Static",
+      "type": "python",
+      "request": "launch",
+      "program": "/media/feodoritiy/HDD/CODE/VS_PY/md_tpl/md_tpl.py",
+      "args": [
+        "/media/feodoritiy/HDD/CODE/VS_C+/fti/Programming/Labs/02/README.tpl.md",
+        "/media/feodoritiy/HDD/CODE/VS_C+/fti/Programming/Labs/02/README.md",
+      ],
+      "console": "integratedTerminal",
+    }
+    {
       "name": "C++ Run Current",
       "type": "cppdbg",
       "request": "launch",

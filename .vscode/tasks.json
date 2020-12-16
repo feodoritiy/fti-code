@@ -28,11 +28,7 @@
         "isDefault": true
       },
       "presentation": {
-        //"echo": true,
-        //"reveal": "silent",
         "focus": true,
-        //"panel": "shared",
-        //"showReuseMessage": true,
         "clear": true
       }
     },
@@ -63,13 +59,27 @@
         "isDefault": true
       },
       "presentation": {
-        //"echo": true,
-        //"reveal": "silent",
         "focus": true,
-        //"panel": "shared",
-        //"showReuseMessage": true,
         "clear": true
       }
+    },
+    {
+      "label": "MD_TPL Build Readme",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "/media/feodoritiy/HDD/CODE/VS_PY/md_tpl/md_tpl.py",
+        "${fileDirname}/README.tpl.md",
+        "${fileDirname}/README.md"
+      ],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": []
     }
   ]
 }
