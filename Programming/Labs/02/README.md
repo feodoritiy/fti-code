@@ -791,6 +791,9 @@ bool File::exists() {
 
 Входной точкой в код серверной стороны является файл [main.cpp](./C++/main.cpp), который подключает в себя все модули и запускает сервер. Также, он настраивает обработку запросов на сервер рассмотренными выше роутами.
 
+<details><summary>Исходный код</summary>
+
+```c++
 #include <iostream>
 
 #include <cpp_httplib/httplib.h>
@@ -825,6 +828,8 @@ int main(int argc, char** argv)
 	return 0;
 }
 
+```
+</details>
 
 ### Работа диалога
 
