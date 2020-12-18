@@ -662,7 +662,130 @@ namespace RouteRoot {
 
 Ранее упоминалось взаимодействие с файловой системой, точнее чтение и запись в файлы. Программа работает с JSON файлами из папки [json/dialogs](./C++/json/dialogs), а также с файлом [config.json](./C++/json/config.json). Все эти взаимодействия осуществляются с помощью разработанного класса [File](./C++/include/File). Этот класс обладает рядом статических и нестатических методов, позволяющих читать и записывать как обычный текст, так и сразу JSON.
 
-(( С++include = folder:".", module:"File" ))
+<details><summary>Исходный код</summary>
+<details><summary>Заголовочный файл</summary>
+
+```c++
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+
+#include <json/json.hpp>
+using json = nlohmann::json;
+
+// File::pwd Linux
+#include <libgen.h>         // dirname
+#include <unistd.h>         // readlink
+#include <linux/limits.h>   // PATH_MAX
+
+class File {
+public:
+   std::string abspath;
+
+   static std::string pwd();
+
+   static std::string Read(std::string path);
+   static void Write(std::string path, std::string data);
+   static json ReadJson(std::string path);
+   static void WriteJson(std::string path, json data);
+
+   File(std::string abspathToFile);
+
+   std::string read();
+   void write(const std::string& data);
+   json readJson();
+   void writeJson(json data);
+
+   bool exists();
+};
+```
+</details>
+<details><summary>Реализация</summary>
+
+```c++
+#include "File.h"
+
+// static
+
+std::string File::pwd() {
+   char result[PATH_MAX];
+   ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
+   const char* path;
+   if (count != -1) {
+      path = dirname(result);
+   }
+   return std::string(path);
+}
+
+std::string File::Read(std::string path) {
+   File* f = new File(path);
+   return f->read();
+}
+void File::Write(std::string path, std::string data) {
+   File* f = new File(path);
+   f->write(data);
+}
+
+json File::ReadJson(std::string path) {
+   File* f = new File(path);
+   return f->readJson();
+}
+void File::WriteJson(std::string path, json data) {
+   File* f = new File(path);
+   f->writeJson(data);
+}
+
+
+// constructors
+
+File::File(std::string abspathToFile) {
+   abspath = abspathToFile;
+}
+
+
+// methods
+
+std::string File::read() {
+   std::string res;
+   std::ifstream file(abspath);
+   if (file.good()) {
+      res = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+      file.close();
+      return res;
+   }
+   else {
+      file.close();
+      std::cout << "File::read Error: file ifstream is bad.";
+      throw "File::read Error: file ifstream is bad.";
+   }
+}
+void File::write(const std::string& data) {
+   std::ofstream file;
+   file.open(abspath);
+   file << data;
+   file.close();
+}
+
+json File::readJson() {
+   return json::parse(read());
+}
+void File::writeJson(json data) {
+   write(data.dump());
+}
+
+bool File::exists() {
+   std::ifstream file(abspath);
+   bool res = file.good();
+   file.close();
+   return res;
+}
+```
+</details>
+</details>
+<br>
 
 ### main.cpp
 
