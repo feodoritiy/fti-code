@@ -1,0 +1,95 @@
+Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+1,1,"Frauenthal, Mrs. Henry William (Clara Heinsheimer)",female,-1.0,1,0,PC 17611,133.64999,,S
+1,1,"Meyer, Mrs. Edgar Joseph (Leila Saks)",female,-1.0,1,0,PC 17604,82.17079,,C
+1,1,"Chibnall, Mrs. (Edith Martha Bowerman)",female,-1.0,0,1,113505,55.0,E33,S
+1,1,"Thorne, Mrs. Gertrude Maybelle",female,-1.0,0,0,PC 17585,79.19999,,C
+1,1,"Kenyon, Mrs. Frederick R (Marion)",female,-1.0,1,0,17464,51.86249,D21,S
+1,1,"Taylor, Mrs. Elmer Zebley (Juliet Cummins Wright)",female,-1.0,1,0,19996,52.0,C126,S
+1,1,"Fleming, Miss. Margaret",female,-1.0,0,0,17421,110.88330,,C
+1,1,"Spencer, Mrs. William Augustus (Marie Eugenie)",female,-1.0,1,0,PC 17569,146.52079,B78,C
+1,1,"Goldenberg, Mrs. Samuel L (Edwiga Grabowska)",female,-1.0,1,0,17453,89.10420,C92,C
+0,1,"Allison, Miss. Helen Loraine",female,2.0,1,2,113781,151.55000,C22 C26,S
+1,1,"Carter, Miss. Lucile Polk",female,14.0,1,2,113760,120.0,B96 B98,S
+1,1,"Madill, Miss. Georgette Alexandra",female,15.0,0,1,24160,211.33749,B5,S
+1,1,"Hippach, Miss. Jean Gertrude",female,16.0,0,1,111361,57.97919,B18,C
+1,1,"Lines, Miss. Mary Conover",female,16.0,0,1,PC 17592,39.40000,D28,S
+1,1,"Maioni, Miss. Roberta",female,16.0,0,0,110152,86.50000,B79,S
+1,1,"Penasco y Castellana, Mrs. Victor de Satode (Maria Josefa Perez de Soto y Vallejo)",female,17.0,1,0,PC 17758,108.90000,C65,C
+1,1,"Dick, Mrs. Albert Adrian (Vera Gillespie)",female,17.0,1,0,17474,57.0,B20,S
+1,1,"Ryerson, Miss. Emily Borie",female,18.0,2,2,PC 17608,262.37500,B57 B59 B63 B66,C
+1,1,"Astor, Mrs. John Jacob (Madeleine Talmadge Force)",female,18.0,1,0,PC 17757,227.52499,C62 C64,C
+1,1,"Taussig, Miss. Ruth",female,18.0,0,2,110413,79.65000,E68,S
+1,1,"Graham, Miss. Margaret Edith",female,19.0,0,0,112053,30.0,B42,S
+1,1,"Newsom, Miss. Helen Monypeny",female,19.0,0,2,11752,26.28330,D47,S
+1,1,"Bishop, Mrs. Dickinson H (Helen Walton)",female,19.0,1,0,11967,91.7920,B49,C
+1,1,"Ryerson, Miss. Susan Parker ""Suzette""",female,21.0,2,2,PC 17608,262.37500,B57 B59 B63 B66,C
+1,1,"Longley, Miss. Gretchen Fiske",female,21.0,0,0,13502,77.95829,D9,S
+1,1,"Cleaver, Miss. Alice",female,22.0,0,0,113781,151.55000,,S
+1,1,"Frolicher, Miss. Hedwig Margaritha",female,22.0,0,2,13568,49.50000,B39,C
+1,1,"Bowerman, Miss. Elsie Edith",female,22.0,0,1,113505,55.0,E33,S
+1,1,"Pears, Mrs. Thomas (Edith Wearne)",female,22.0,1,0,113776,66.59999,C2,S
+1,1,"Fortune, Miss. Mabel Helen",female,23.0,3,2,19950,263.0,C23 C25 C27,S
+1,1,"Newell, Miss. Marjorie",female,23.0,1,0,35273,113.27500,D36,C
+1,1,"Hays, Miss. Margaret Bechstein",female,24.0,0,0,11767,83.15830,C54,C
+1,1,"Mayne, Mlle. Berthe Antonine (""Mrs de Villiers"")",female,24.0,0,0,PC 17482,49.50419,C90,C
+1,1,"Fortune, Miss. Alice Elizabeth",female,24.0,3,2,19950,263.0,C23 C25 C27,S
+1,1,"Aubart, Mme. Leontine Pauline",female,24.0,0,0,PC 17477,69.30000,B35,C
+1,1,"Sagesser, Mlle. Emma",female,24.0,0,0,PC 17477,69.30000,B35,C
+0,1,"Allison, Mrs. Hudson J C (Bessie Waldo Daniels)",female,25.0,1,2,113781,151.55000,C22 C26,S
+1,1,"Barber, Miss. Ellen ""Nellie""",female,26.0,0,0,19877,78.84999,,S
+1,1,"Allen, Miss. Elisabeth Walton",female,29.0,0,0,24160,211.33749,B5,S
+1,1,"Perreault, Miss. Anne",female,30.0,0,0,12749,93.50000,B73,S
+1,1,"Cherry, Miss. Gladys",female,30.0,0,0,110152,86.50000,B77,S
+1,1,"Serepeca, Miss. Augusta",female,30.0,0,0,113798,31.0,,C
+1,1,"Francatelli, Miss. Laura Mabel",female,30.0,0,0,PC 17485,56.92919,E36,C
+1,1,"LeRoy, Miss. Bertha",female,30.0,0,0,PC 17761,106.42500,,C
+1,1,"Wick, Miss. Mary Natalie",female,31.0,0,2,36928,164.86669,C7,S
+1,1,"Newell, Miss. Madeleine",female,31.0,1,0,35273,113.27500,D36,C
+1,1,"Bazzani, Miss. Albina",female,32.0,0,0,11813,76.29170,D15,C
+1,1,"Chambers, Mrs. Norman Campbell (Bertha Griggs)",female,33.0,1,0,113806,53.9999,E8,S
+1,1,"Rothes, the Countess. of (Lucy Noel Martha Dyer-Edwards)",female,33.0,0,0,110152,86.50000,B77,S
+1,1,"Minahan, Miss. Daisy E",female,33.0,1,0,19928,90.0,C78,Q
+1,1,"Ward, Miss. Anna",female,35.0,0,0,PC 17755,512.32922,,C
+1,1,"Bissette, Miss. Amelia",female,35.0,0,0,PC 17760,135.63330,C99,S
+1,1,"Hoyt, Mrs. Frederick Maxfield (Jane Anne Forby)",female,35.0,1,0,19943,90.0,C93,S
+1,1,"Holverson, Mrs. Alexander Oskar (Mary Aline Towner)",female,35.0,1,0,113789,52.0,,S
+1,1,"Futrelle, Mrs. Jacques Heath (Lily May Peel)",female,35.0,1,0,113803,53.9999,C123,S
+1,1,"Harris, Mrs. Henry Birkhardt (Irene Wallach)",female,35.0,1,0,36973,83.47499,C83,S
+1,1,"Crosby, Miss. Harriet R",female,36.0,0,2,WE/P 5735,71.0,B22,S
+1,1,"Carter, Mrs. William Ernest (Lucile Polk)",female,36.0,1,2,113760,120.0,B96 B98,S
+1,1,"Young, Miss. Marie Grice",female,36.0,0,0,PC 17760,135.63330,C32,C
+1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38.0,1,0,PC 17599,71.28330,C85,C
+1,1,"Endres, Miss. Caroline Louise",female,38.0,0,0,PC 17757,227.52499,C45,C
+1,1,"Icard, Miss. Amelie",female,38.0,0,0,113572,80.0,B28,
+1,1,"Compton, Miss. Sara Rebecca",female,39.0,1,1,PC 17756,83.15830,E49,C
+1,1,"Taussig, Mrs. Emil (Tillie Mandelbaum)",female,39.0,1,1,110413,79.65000,E67,S
+1,1,"Silvey, Mrs. William Baird (Alice Munger)",female,39.0,1,0,13507,55.90000,E44,S
+1,1,"Thayer, Mrs. John Borland (Marian Longstreth Morris)",female,39.0,1,1,17421,110.88330,C68,C
+1,1,"Spedden, Mrs. Frederic Oakley (Margaretta Corning Stone)",female,40.0,1,1,16966,134.50000,E34,C
+1,1,"Shutes, Miss. Elizabeth W",female,40.0,0,0,PC 17582,153.46249,C125,S
+1,1,"Burns, Miss. Elizabeth Margaret",female,41.0,0,0,16966,134.50000,E40,C
+1,1,"Bidois, Miss. Rosalie",female,42.0,0,0,PC 17757,227.52499,,C
+1,1,"Robert, Mrs. Edward Scott (Elisabeth Walton McMillan)",female,43.0,0,1,24160,211.33749,B3,S
+1,1,"Hippach, Mrs. Louis Albert (Ida Sophia Fischer)",female,44.0,0,1,111361,57.97919,B18,C
+1,1,"Brown, Mrs. James Joseph (Margaret Tobin)",female,44.0,0,0,PC 17610,27.72080,B4,C
+1,1,"Wick, Mrs. George Dennick (Mary Hitchcock)",female,45.0,1,1,36928,164.86669,,S
+1,1,"Beckwith, Mrs. Richard Leonard (Sallie Monypeny)",female,47.0,1,1,11751,52.55419,D35,S
+1,1,"Swift, Mrs. Frederick Joel (Margaret Welles Barron)",female,48.0,0,0,17466,25.92919,D17,S
+1,1,"Duff Gordon, Lady. (Lucille Christiana Sutherland) (""Mrs Morgan"")",female,48.0,1,0,11755,39.59999,A16,C
+1,1,"Harper, Mrs. Henry Sleeper (Myna Haxtun)",female,49.0,1,0,PC 17572,76.72920,D33,C
+1,1,"Leader, Dr. Alice (Farnham)",female,49.0,0,0,17465,25.92919,D17,S
+0,1,"Isham, Miss. Ann Elizabeth",female,50.0,0,0,PC 17595,28.71249,C49,C
+1,1,"Baxter, Mrs. James (Helene DeLaudeniere Chaput)",female,50.0,0,1,PC 17558,247.52079,B58 B60,C
+1,1,"Hogeboom, Mrs. John C (Anna Andrews)",female,51.0,1,0,13502,77.95829,D11,S
+1,1,"Stephenson, Mrs. Walter Bertram (Martha Eustis)",female,52.0,1,0,36947,78.26670,D20,C
+1,1,"Hays, Mrs. Charles Melville (Clara Jennings Gregg)",female,52.0,1,1,12749,93.50000,B69,S
+1,1,"Appleton, Mrs. Edward Dale (Charlotte Lamson)",female,53.0,2,0,11769,51.47919,C101,S
+1,1,"Eustis, Miss. Elizabeth Mussey",female,54.0,1,0,36947,78.26670,D20,C
+1,1,"Rothschild, Mrs. Martin (Elizabeth L. Barrett)",female,54.0,1,0,PC 17603,59.40000,,C
+1,1,"Potter, Mrs. Thomas Jr (Lily Alexenia Wilson)",female,56.0,0,1,11767,83.15830,C50,C
+1,1,"Bonnell, Miss. Elizabeth",female,58.0,0,0,113783,26.54999,C103,S
+1,1,"Graham, Mrs. William Thompson (Edith Junkins)",female,58.0,0,1,PC 17582,153.46249,C125,S
+1,1,"Lurette, Miss. Elise",female,58.0,0,0,PC 17569,146.52079,B80,C
+1,1,"Warren, Mrs. Frank Manley (Anna Sophia Atkinson)",female,60.0,1,0,110813,75.25000,D37,C
+1,1,"Stone, Mrs. George Nelson (Martha Evelyn)",female,62.0,0,0,113572,80.0,B28,
+1,1,"Andrews, Miss. Kornelia Theodosia",female,63.0,1,0,13502,77.95829,D7,S
