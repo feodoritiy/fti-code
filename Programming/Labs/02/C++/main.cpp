@@ -21,6 +21,8 @@ int main(int argc, char** argv)
 	server
 		.Post("/",
 			RouteRoot::Handler)
+		.Get("/webhooks",
+			RouteWebhooks::Handler)
 		.Post("/webhooks",
 			RouteWebhooks::Handler);
 

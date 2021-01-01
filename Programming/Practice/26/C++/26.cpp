@@ -14,10 +14,12 @@ int randomInt(int range)
 template <typename T>
 void printArr(std::vector<T> a, std::string before = "")
 {
+#ifndef __NO_BOZO_COUT__
 	std::cout << before;
 	for (auto &it : a)
 		std::cout << it << ' ';
 	std::cout << std::endl;
+#endif
 }
 
 template <typename T>
@@ -124,6 +126,7 @@ void sortStuff(InputData<T> data)
 	BozoSort(data.int1, data.int2, data.int3, false);
 }
 
+#ifndef __NO_BOZO_MAIN__
 int main()
 {
 	InputData<double> inputDouble = inputArr<double>();
@@ -134,3 +137,4 @@ int main()
 
 	return 0;
 }
+#endif
