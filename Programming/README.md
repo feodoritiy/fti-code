@@ -40,3 +40,6 @@
 | Практическая 30 - [[С++]](./Practice/30/C++/30.cpp) [[Python]](./Practice/30/Python/30.py) | |
 | Практическая 31 - [[С++]](./Practice/31/C++/31.cpp) [[Python]](./Practice/31/Python/31.py) | |
 | Практическая 32 - [[С++]](./Practice/32/C++/32.cpp) [[Python]](./Practice/32/Python/32.py) | |
+| Практическая 33 - [[С++]](./Practice/33/C++/33.cpp) [[Python]](./Practice/33/Python/33.py) | |
+| Практическая 34 - [[С++]](./Practice/34/C++/34.cpp) [[Python]](./Practice/34/Python/34.py) | |
+| Практическая 35 - [[С++]](./Practice/35/C++/35.cpp) [[Python]](./Practice/35/Python/35.py) | |
