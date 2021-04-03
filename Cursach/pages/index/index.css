@@ -1,0 +1,123 @@
+* {
+   box-sizing: border-box;
+   letter-spacing: 0.11em;
+   line-height: 18px;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: calc(100vh - 1em);
+   font-family: Ubuntu Condensed, Calibri, sans-serif;
+   font-size: 16px;
+   background: linear-gradient(180deg, rgba(250, 255, 0, 0.18) 0%, rgba(255, 77, 0, 0.29) 100%), #FFFFFF;
+}
+
+main {
+   padding: 1em;
+   background: white;
+   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+   border-radius: 30px 0px;
+   width: 484px;
+   animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: scale(0.9, 0.9);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1, 1);
+   }
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 2.25em;
+}
+
+.handle {
+   background: linear-gradient(90deg, rgba(250, 255, 0, 0.18) 0%, rgba(255, 77, 0, 0.29) 100%);
+   box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.1);
+   border-radius: 16px 0px;
+   height: 1.5em;
+   width: calc(100% - 10em);
+}
+
+.logo {
+   font-family: Sansation, Calibri Bold, Arial, sans-serif;
+   font-size: 1.5em;
+   letter-spacing: 0.11em;
+   margin-right: 0.5em;
+}
+
+.logo__x {
+   background: -webkit-linear-gradient(rgba(255, 77, 0, 1), rgba(255, 255, 255, 0)), black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input {
+   background: none;
+   outline: none;
+   border: 1px solid #e5e5e5;
+   font: inherit;
+   width: 100%;
+   display: block;
+   height: calc(40 / 16 * 1em);
+   padding: 0.75em;
+}
+input::placeholder {
+   color: #e5e5e5;
+}
+input:focus {
+   border: 1px solid black;
+}
+
+input:first-child {
+   margin-bottom: 10px;
+}
+
+button {
+   background: linear-gradient(yellow, transparent);
+   border: none;
+   outline: none;
+   font: inherit;
+   height: calc(25 / 16 * 1em);
+   cursor: pointer;
+}
+
+button > div {
+   transform: translateY(-0.7em);
+   transition: 0.2s ease;
+}
+button:hover > div {
+   transform: translateY(0);
+}
+
+:root {
+   --button-login-size: 114;
+}
+
+#buttonLogin {
+   background: linear-gradient(180deg, #C4C4C4 0%, rgba(250, 255, 0, 0.18) 0.01%, rgba(250, 255, 0, 0) 100%);
+   width: calc(var(--button-login-size) / 16 * 1em);
+   margin-right: 1em;
+}
+#buttonRegister {
+   background: linear-gradient(180deg, #C4C4C4 0%, rgba(255, 77, 0, 0.29) 0.01%, rgba(255, 77, 0, 0) 100%);
+   width: calc(100% - 1em - var(--button-login-size) / 16 * 1em);
+}
+
+footer {
+   margin-top: 2.25em;
+}
+
+.row {
+   display: flex;
+}

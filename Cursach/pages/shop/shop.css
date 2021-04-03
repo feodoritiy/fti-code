@@ -1,0 +1,140 @@
+* {
+   box-sizing: border-box;
+   letter-spacing: 0.11em;
+   line-height: 18px;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: calc(100vh - 1em);
+   font-family: Ubuntu Condensed, Calibri, sans-serif;
+   font-size: 16px;
+   background: linear-gradient(180deg, rgba(250, 255, 0, 0.18) 0%, rgba(255, 77, 0, 0.29) 100%), #FFFFFF;
+}
+
+main {
+   padding: 1em;
+   background: white;
+   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+   border-radius: 30px 0px;
+   width: 484px;
+   height: 245px;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: scale(0.9, 0.9);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1, 1);
+   }
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: calc(30 / 16 * 1em);
+}
+
+.handle {
+   background: linear-gradient(90deg, rgba(250, 255, 0, 0.18) 0%, rgba(255, 77, 0, 0.29) 100%);
+   box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.1);
+   border-radius: 16px 0px;
+   height: 1.5em;
+   width: calc(100% - 10em);
+}
+
+.logo {
+   font-family: Sansation, Calibri Bold, Arial, sans-serif;
+   font-size: 1.5em;
+   letter-spacing: 0.11em;
+   margin-right: 0.5em;
+}
+
+.logo__x {
+   background: -webkit-linear-gradient(rgba(255, 77, 0, 1), rgba(255, 255, 255, 0)), black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input {
+   background: none;
+   outline: none;
+   border: 1px solid #e5e5e5;
+   font: inherit;
+   width: 100%;
+   display: block;
+   height: calc(40 / 16 * 1em);
+   padding: 0.75em;
+}
+input::placeholder {
+   color: #e5e5e5;
+}
+input:focus {
+   border: 1px solid black;
+}
+
+input:first-child {
+   margin-bottom: 10px;
+}
+
+.buttons {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
+
+.buttons > button {
+   margin-bottom: 1em;
+}
+
+button {
+   background: linear-gradient(yellow, transparent);
+   border: none;
+   outline: none;
+   font: inherit;
+   height: calc(25 / 16 * 1em);
+   cursor: pointer;
+   display: block;
+   text-align: left;
+}
+
+button > div {
+   transform: translateX(-1.00em);
+   transition: 0.2s ease;
+}
+button:hover > div {
+   transform: translateX(0);
+}
+
+#buttonCreate {
+   background: linear-gradient(180deg, #C4C4C4 0%, rgba(250, 255, 0, 0.18) 0.01%, rgba(250, 255, 0, 0) 100%);
+   width: calc(432 / 452 * 100%);
+}
+#buttonConnect {
+   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0.29) 0.01%, rgba(255, 184, 0, 0) 100%);
+   width: calc(412 / 452 * 100%);
+}
+#buttonShop {
+   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 77, 0, 0.29) 0.01%, rgba(255, 77, 0, 0) 100%);
+   width: calc(392 / 452 * 100%);
+}
+
+#buttonExit {
+   background: linear-gradient(180deg, #E5E5E5 0%, #E5E5E5 0.01%, rgba(229, 229, 229, 0) 100%);
+   align-self: flex-start;
+   text-align: right;
+   width: calc(199 / 452 * 100%);
+}
+#buttonExit:not(:hover) > div {
+   transform: translateX(1em);
+}
+
+.row {
+   display: flex;
+}

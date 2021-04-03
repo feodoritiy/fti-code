@@ -1,0 +1,111 @@
+
+[2021-04-02 17:54:56] Traceback (most recent call last):
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/__main__.py", line 45, in <module>
+    cli.main()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 444, in main
+    run()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 285, in run_file
+    runpy.run_path(target_as_str, run_name=compat.force_str("__main__"))
+  File "/usr/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/usr/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 106, in <module>
+    main()
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 102, in main
+    browser.load_page('sub')
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 76, in load_page
+    self.browser.LoadUrl(data_uri)
+  File "browser.pyx", line 521, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 522, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 464, in cefpython_py37.PyBrowser.GetMainFrame
+  File "browser.pyx", line 212, in cefpython_py37.PyBrowser.GetCefBrowser
+Exception: PyBrowser.GetCefBrowser() failed: CefBrowser was destroyed
+
+
+[2021-04-02 18:28:25] Traceback (most recent call last):
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/__main__.py", line 45, in <module>
+    cli.main()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 444, in main
+    run()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 285, in run_file
+    runpy.run_path(target_as_str, run_name=compat.force_str("__main__"))
+  File "/usr/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/usr/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 118, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 106, in main
+    await use_task
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 114, in use_browser
+    browser.load_page('sub')
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 77, in load_page
+    self.browser.LoadUrl(data_uri)
+  File "browser.pyx", line 521, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 522, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 464, in cefpython_py37.PyBrowser.GetMainFrame
+  File "browser.pyx", line 212, in cefpython_py37.PyBrowser.GetCefBrowser
+Exception: PyBrowser.GetCefBrowser() failed: CefBrowser was destroyed
+
+
+[2021-04-02 18:29:18] Traceback (most recent call last):
+  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/__main__.py", line 45, in <module>
+    cli.main()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 444, in main
+    run()
+  File "/home/feodoritiy/.vscode/extensions/ms-python.python-2021.3.680753044/pythonFiles/lib/python/debugpy/../debugpy/server/cli.py", line 285, in run_file
+    runpy.run_path(target_as_str, run_name=compat.force_str("__main__"))
+  File "/usr/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/usr/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 118, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 106, in main
+    await use_task
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 114, in use_browser
+    browser.load_page('sub')
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/main.py", line 77, in load_page
+    self.browser.LoadUrl(data_uri)
+  File "browser.pyx", line 521, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 522, in cefpython_py37.PyBrowser.LoadUrl
+  File "browser.pyx", line 464, in cefpython_py37.PyBrowser.GetMainFrame
+  File "browser.pyx", line 212, in cefpython_py37.PyBrowser.GetCefBrowser
+Exception: PyBrowser.GetCefBrowser() failed: CefBrowser was destroyed
+
+
+[2021-04-03 16:36:35] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/browser.py", line 34, in load_page
+    html = self.read(f'./cache/{page_name}.html')
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/browser.py", line 30, in read
+    with open(path.join(path.dirname(__file__), relpath), 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/./cache/main-menu.html'
+
