@@ -19,7 +19,7 @@ main {
    background: white;
    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
    border-radius: 30px 0px;
-   width: 484px;
+   width: 725px;
    height: 245px;
 }
 
@@ -46,20 +46,24 @@ header {
    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.1);
    border-radius: 16px 0px;
    height: 1.5em;
-   width: calc(100% - 10em);
+   width: calc(100% - 17em);
 }
 
 .logo {
    font-family: Sansation, Calibri Bold, Arial, sans-serif;
    font-size: 1.5em;
    letter-spacing: 0.11em;
-   margin-right: 0.5em;
+   margin-right: 1.25em;
 }
 
 .logo__x {
    background: -webkit-linear-gradient(rgba(255, 77, 0, 1), rgba(255, 255, 255, 0)), black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.logo__subtitle {
+   color: rgba(0,0,0,0.5);
 }
 
 input {
@@ -83,16 +87,6 @@ input:first-child {
    margin-bottom: 10px;
 }
 
-.buttons {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-end;
-}
-
-.buttons > button {
-   margin-bottom: 1em;
-}
-
 button {
    background: linear-gradient(yellow, transparent);
    border: none;
@@ -101,15 +95,26 @@ button {
    height: calc(25 / 16 * 1em);
    cursor: pointer;
    display: block;
-   text-align: left;
+   width: 7em;
+   font-size: 0.8em;
 }
 
 button > div {
-   transform: translateX(-1.00em);
+   transform: translateY(-0.6em);
    transition: 0.2s ease;
 }
 button:hover > div {
-   transform: translateX(0);
+   transform: translateY(-0.2em);
+}
+
+.button_buy {
+   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0) 100%);
+}
+.button_select {
+   background: linear-gradient(180deg, rgba(250, 255, 0, 0.18) 0%, rgba(250, 255, 0, 0) 100%);
+}
+.button_selected {
+   background: linear-gradient(transparent, white), linear-gradient(197.02deg, rgba(255, 77, 0, 0.29) 11.66%, rgba(255, 77, 0, 0) 88.28%), linear-gradient(109.95deg, rgba(250, 255, 0, 0.18) 35.19%, rgba(250, 255, 0, 0) 63.32%);
 }
 
 #buttonCreate {
@@ -137,4 +142,125 @@ button:hover > div {
 
 .row {
    display: flex;
+}
+.dn {
+   display: none;
+}
+
+/* STOP: Slider */
+:root {
+   --cell-size: calc(107 / 16 * 1em);
+}
+
+.slider {
+   user-select: none;
+}
+
+.slider__title {
+   text-align: center;
+}
+
+.slider__middle {
+   display: flex;
+   align-items: center;
+}
+
+.slider__carousel {
+   overflow: hidden;
+   width: calc(var(--cell-size));
+   height: var(--cell-size);
+   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+   border-radius: calc(10 / 16 * 1em);
+   margin: 0.25em 0.75em 0.75em 0.75em;
+   position: relative;
+}
+
+.slider__arrow {
+   cursor: pointer;
+}
+
+.slider__content {
+   display: flex;
+   width: fit-content;
+   position: absolute;
+}
+
+.slider__cell {
+   width: var(--cell-size);
+   height: var(--cell-size);
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.slider__cell svg {
+   
+}
+
+.slider__cell-price {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 0.1rem;
+   font-size: 0.8em;
+}
+
+.slider__footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+/* STOP: fitting */
+.fitting {
+   display: flex;
+   flex-direction: column;
+   margin-left: calc(52/16*1em);
+}
+.fitting__title {
+   text-align: center;
+   margin-bottom: 0.25em;
+}
+.fitting__field {
+   width: calc(258 / 16 * 1em);
+   height: calc(107 / 16 * 1em);
+   border-radius: calc(10 / 16 * 1em) 0px;
+   overflow: hidden;
+}
+.fitting__field .row {
+   width: calc((73 + 2) * 5 / 16 * 1em);
+}
+.fitting__field-wrapper {
+   margin-left: calc((75 - 18) / 16 * 1em * -1);
+   margin-top: calc((75 - 16) / 16 * 1em * -1);
+}
+.fitting__cell {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: calc(73/16*1em);
+   height: calc(73/16*1em);
+   margin-right: calc(2 / 16 * 1em);
+   margin-bottom: calc(2 / 16 * 1em);
+   background-position: center;
+   background-repeat: no-repeat;
+}
+.fitting__figure {
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+}
+.fitting__amount {
+   background: linear-gradient(transparent, white), linear-gradient(197.02deg, rgba(255, 77, 0, 0.29) 11.66%, rgba(255, 77, 0, 0) 88.28%), linear-gradient(109.95deg, rgba(250, 255, 0, 0.18) 35.19%, rgba(250, 255, 0, 0) 63.32%);
+   border-radius: 10px 0px;
+   text-align: center;
+   width: 100%;
+   margin-top: 0.75rem;
+}
+.fitting__amount span {
+
 }

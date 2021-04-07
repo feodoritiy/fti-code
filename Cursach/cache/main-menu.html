@@ -3,7 +3,11 @@
 
    <head>
       <style>
-         * {
+         
+/* === Lib: a. === */
+a {
+   text-decoration: none;
+}* {
    box-sizing: border-box;
    letter-spacing: 0.11em;
    line-height: 18px;
@@ -163,9 +167,11 @@ button:hover > div {
             <button id="buttonConnect" type="button">
                <div>Подключится к игре</div>
             </button>
-            <button id="buttonShop" type="button">
-               <div>Магазин</div>
-            </button>
+            <a href="@shop">
+               <button id="buttonShop" type="button">
+                  <div>Магазин</div>
+               </button>
+            </a>
             <button id="buttonExit" type="button">
                <div>Выйти из аккаунта</div>
             </button>

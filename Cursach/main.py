@@ -8,7 +8,7 @@ def main():
 
     # All logic is here
     #browser = Browser('main-menu', {}) # Loading browser on 'index' page
-    browser = Browser('main-menu', {}) # Loading browser on 'index' page
+    browser = Browser('shop', {}) # Loading browser on 'index' page
 
 if __name__ == '__main__':
     main()
