@@ -82,10 +82,19 @@ $('.fitting__cell').css('background-image', `url("${imageField_pink.src}")`);
 $('.fitting__figure').css('background-image', `url("${imageFigure_pink.src}")`).parent().css('background-image', '');
 
 class Fitting {
-   constructor() {
+   /**
+    * Consist logic of fitting block
+    * @param {string} startFigureName image name of figure
+    * @param {string} startFieldName image name of field
+    */
+   constructor(startFigureName, startFieldName) {
       this.el = document.querySelector('.fitting');
-      this.figureName = '';
-      this.fieldName = '';
+      
+      this.fieldName = startFieldName;
+      this.figureName = startFigureName;
+
+      this.field = startFieldName;
+      this.figure = startFigureName;
    }
 
    /**
@@ -122,4 +131,4 @@ class Fitting {
    }
 }
 
-const fitting = new Fitting();
+const fitting = new Fitting('pink', 'pink');
