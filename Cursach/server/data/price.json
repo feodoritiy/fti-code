@@ -1,0 +1,16 @@
+{
+   "figure": {
+      "pink": 0,
+      "sky": 10000,
+      "orange": 20000,
+      "black": 35000,
+      "green": 100000
+   },
+   "field": {
+      "pink": 0,
+      "sky": 10000,
+      "crystal": 20000,
+      "leopard": 35000,
+      "frame": 100000
+   }
+}

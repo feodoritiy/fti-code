@@ -1,0 +1,22 @@
+{
+   "id": 0,
+   "login": "string",
+   "password": "string_md5",
+   "shop": {
+      "figure": {
+         "pink": "selected",
+         "sky": "buy",
+         "orange": "buy",
+         "black": "buy",
+         "green": "buy"
+      },
+      "field": {
+         "pink": "selected",
+         "sky": "buy",
+         "crystal": "buy",
+         "leopard": "buy",
+         "frame": "buy"
+      }
+   },
+   "amount": 0
+}
