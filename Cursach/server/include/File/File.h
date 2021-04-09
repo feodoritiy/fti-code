@@ -8,10 +8,21 @@
 #include <json/json.hpp>
 using json = nlohmann::json;
 
+
+#ifdef _WIN32
+
+// File::pwd Windows
+#include <Windows.h>
+
+#else
+
 // File::pwd Linux
 #include <libgen.h>         // dirname
 #include <unistd.h>         // readlink
 #include <linux/limits.h>   // PATH_MAX
+
+#endif
+
 
 class File {
 public:
@@ -29,7 +40,7 @@ public:
    std::string read();
    void write(const std::string& data);
    json readJson();
-   void writeJson(json data);
+   void writeJson(json data, int indent = -1);
 
    bool exists();
 };

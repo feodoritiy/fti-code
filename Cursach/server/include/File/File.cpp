@@ -3,6 +3,13 @@
 // static
 
 std::string File::pwd() {
+#ifdef _WIN32
+   // Windows
+   TCHAR path[MAX_PATH];
+   GetCurrentDirectory(MAX_PATH, path);
+   return std::string(path);
+#else
+   // Linux
    char result[PATH_MAX];
    ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
    const char* path;
@@ -10,6 +17,7 @@ std::string File::pwd() {
       path = dirname(result);
    }
    return std::string(path);
+#endif
 }
 
 std::string File::Read(std::string path) {
@@ -42,7 +50,7 @@ File::File(std::string abspathToFile) {
 
 std::string File::read() {
    std::string res;
-   std::ifstream file(abspath);
+   std::ifstream file(this->abspath);
    if (file.good()) {
       res = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
       file.close();
@@ -50,8 +58,9 @@ std::string File::read() {
    }
    else {
       file.close();
-      std::cout << "File::read Error: file ifstream is bad.";
-      throw "File::read Error: file ifstream is bad.";
+      std::string message = "File::read Error: file ifstream is bad (" + this->abspath + ")";
+      std::cout << message << std::endl;
+      throw message;
    }
 }
 void File::write(const std::string& data) {
@@ -64,8 +73,8 @@ void File::write(const std::string& data) {
 json File::readJson() {
    return json::parse(read());
 }
-void File::writeJson(json data) {
-   write(data.dump());
+void File::writeJson(json data, int indent /* = -1 */) {
+   write(data.dump(indent));
 }
 
 bool File::exists() {

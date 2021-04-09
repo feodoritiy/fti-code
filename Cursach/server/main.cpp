@@ -14,6 +14,7 @@ const int SERVER_PORT = 1234;
 
 #include "routes/root.cpp"
 #include "routes/register.cpp"
+#include "routes/login.cpp"
 #include "routes/create-game.cpp"
 #include "routes/connect-to-game.cpp"
 #include "routes/exit-game.cpp"
@@ -28,6 +29,9 @@ int main() {
       
       .Get("/register", RouteRegister::GetHandler)
       .Post("/register", RouteRegister::PostHandler)
+
+      .Get("/login", RouteLogin::GetHandler)
+      .Post("/login", RouteLogin::PostHandler)
 
       .Get("/create-game", RouteCreateGame::GetHandler)
       .Get("/connect-to-game", RouteConnectToGame::GetHandler)

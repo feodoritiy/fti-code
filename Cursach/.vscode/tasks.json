@@ -189,6 +189,23 @@
             "focus": true,
             "clear": true
          },
-      }
+      }, 
+      {
+         "label": "G++ Build Main then Main",
+         "type": "shell",
+         "dependsOrder": "sequence",
+         "dependsOn": [
+            //"G++ Compile Current",
+            "G++ Compile Main",
+            "G++ Link Objects",
+         ],
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "presentation": {
+            "focus": true,
+            "clear": true
+         },
+      },
    ]
 }

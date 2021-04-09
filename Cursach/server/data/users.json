@@ -1,2 +1,46 @@
 [
+   {
+      "amount": 0,
+      "id": 1,
+      "login": "Hello",
+      "password": "World",
+      "shop": {
+         "field": {
+            "crystal": "buy",
+            "frame": "buy",
+            "leopard": "buy",
+            "pink": "selected",
+            "sky": "buy"
+         },
+         "figure": {
+            "black": "buy",
+            "green": "buy",
+            "orange": "buy",
+            "pink": "selected",
+            "sky": "buy"
+         }
+      }
+   },
+   {
+      "amount": 0,
+      "id": 2,
+      "login": "Man",
+      "password": "Boy",
+      "shop": {
+         "field": {
+            "crystal": "buy",
+            "frame": "buy",
+            "leopard": "buy",
+            "pink": "selected",
+            "sky": "buy"
+         },
+         "figure": {
+            "black": "buy",
+            "green": "buy",
+            "orange": "buy",
+            "pink": "selected",
+            "sky": "buy"
+         }
+      }
+   }
 ]
