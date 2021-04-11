@@ -18,44 +18,37 @@ class SliderEventData {
 
 $('.slider__arrow_right').click(e => {
    const $slider = $(e.target).parents('.slider'),
-      slider = $slider[0],
-      cellCount = $slider.find('.slider__cell').length,
-      cellWidth = $slider.find('.slider__cell')[0].getBoundingClientRect().width
-      sliderContent = $slider.find('.slider__content')[0];
+   slider = $slider[0];
 
-   if (slider.dataset.current >= cellCount - 1) return;
-   
-   sliderContent.style.left = parseFloat(sliderContent.style.left) - cellWidth + 'px';
-   slider.dataset.current = +slider.dataset.current + 1;
-   
-   onSliderChange(new SliderEventData(
-      slider, 
-      $slider.find('.slider__cell')[slider.dataset.current],
-      'right',
-      slider.dataset.current,
-      cellCount
-   ));
+   scrollSlider($slider, +slider.dataset.current + 1, 'right');
 });
 $('.slider__arrow_left').click(e => {
    const $slider = $(e.target).parents('.slider'),
-      slider = $slider[0],
+   slider = $slider[0];
+
+   scrollSlider($slider, +slider.dataset.current - 1, 'left');
+});
+
+function scrollSlider($slider, i, direction = 'force') {
+   const slider = $slider[0],
       cellCount = $slider.find('.slider__cell').length,
       cellWidth = $slider.find('.slider__cell')[0].getBoundingClientRect().width
       sliderContent = $slider.find('.slider__content')[0];
 
-   if (slider.dataset.current <= 0) return;
+   if (i < 0) return;
+   if (i > cellCount - 1) return;
    
-   sliderContent.style.left = parseFloat(sliderContent.style.left) + cellWidth + 'px';
-   slider.dataset.current = +slider.dataset.current - 1;
+   sliderContent.style.left = -1 * cellWidth * i + 'px';
+   slider.dataset.current = i;
    
    onSliderChange(new SliderEventData(
       slider, 
       $slider.find('.slider__cell')[slider.dataset.current],
-      'left',
+      direction,
       slider.dataset.current,
       cellCount
    ));
-});
+}
 
 /**
  * Handle and process slider changes
@@ -132,3 +125,33 @@ class Fitting {
 }
 
 const fitting = new Fitting('pink', 'pink');
+
+
+// STOP: Server connection & logic
+
+async function syncServerData () {
+   const res = await new Promise(res => getShop(res));
+   let { id: id, shop: shop, amount: amount } = res;
+   shop = JSON.parse(shop);
+
+   console.log('id:', id, 'shop:', shop, 'amount:', amount);
+   
+   amountEl.textContent = amount;
+   
+   const sliderFigure = document.querySelector('.slider[data-type="figure"]'),
+      sliderField = document.querySelector('.slider[data-type="field"]'),
+      cellsFigure = Array.from(sliderFigure.querySelectorAll('.slider__cell')),
+      cellsField = Array.from(sliderField.querySelectorAll('.slider__cell'));
+   
+   for (const figure of cellsFigure) {
+      figure.dataset.state = shop.figure[figure.dataset.value];
+   }
+   for (const field of cellsField) {
+      field.dataset.state = shop.field[field.dataset.value];
+   }
+   
+   scrollSlider($(sliderFigure), cellsFigure.findIndex(cell => cell.dataset.state == 'selected'));
+   scrollSlider($(sliderField), cellsField.findIndex(cell => cell.dataset.state == 'selected'));
+}
+
+syncServerData();

@@ -21,6 +21,7 @@ main {
    border-radius: 30px 0px;
    width: 725px;
    height: 245px;
+   position: relative;
 }
 
 @keyframes fadeIn {
@@ -117,27 +118,11 @@ button:hover > div {
    background: linear-gradient(transparent, white), linear-gradient(197.02deg, rgba(255, 77, 0, 0.29) 11.66%, rgba(255, 77, 0, 0) 88.28%), linear-gradient(109.95deg, rgba(250, 255, 0, 0.18) 35.19%, rgba(250, 255, 0, 0) 63.32%);
 }
 
-#buttonCreate {
-   background: linear-gradient(180deg, #C4C4C4 0%, rgba(250, 255, 0, 0.18) 0.01%, rgba(250, 255, 0, 0) 100%);
-   width: calc(432 / 452 * 100%);
-}
-#buttonConnect {
-   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0.29) 0.01%, rgba(255, 184, 0, 0) 100%);
-   width: calc(412 / 452 * 100%);
-}
-#buttonShop {
-   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 77, 0, 0.29) 0.01%, rgba(255, 77, 0, 0) 100%);
-   width: calc(392 / 452 * 100%);
-}
-
-#buttonExit {
-   background: linear-gradient(180deg, #E5E5E5 0%, #E5E5E5 0.01%, rgba(229, 229, 229, 0) 100%);
-   align-self: flex-start;
-   text-align: right;
-   width: calc(199 / 452 * 100%);
-}
-#buttonExit:not(:hover) > div {
-   transform: translateX(1em);
+#buttonBack {
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -100%);
+   top: calc(-20 / 16 * 1em);
 }
 
 .row {

@@ -5,7 +5,7 @@
    "shop": {
       "figure": {
          "pink": "selected",
-         "sky": "buy",
+         "yellow": "buy",
          "orange": "buy",
          "black": "buy",
          "green": "buy"

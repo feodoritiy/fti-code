@@ -30,6 +30,7 @@ main {
    border-radius: 30px 0px;
    width: 725px;
    height: 245px;
+   position: relative;
 }
 
 @keyframes fadeIn {
@@ -126,27 +127,11 @@ button:hover > div {
    background: linear-gradient(transparent, white), linear-gradient(197.02deg, rgba(255, 77, 0, 0.29) 11.66%, rgba(255, 77, 0, 0) 88.28%), linear-gradient(109.95deg, rgba(250, 255, 0, 0.18) 35.19%, rgba(250, 255, 0, 0) 63.32%);
 }
 
-#buttonCreate {
-   background: linear-gradient(180deg, #C4C4C4 0%, rgba(250, 255, 0, 0.18) 0.01%, rgba(250, 255, 0, 0) 100%);
-   width: calc(432 / 452 * 100%);
-}
-#buttonConnect {
-   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0.29) 0.01%, rgba(255, 184, 0, 0) 100%);
-   width: calc(412 / 452 * 100%);
-}
-#buttonShop {
-   background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 77, 0, 0.29) 0.01%, rgba(255, 77, 0, 0) 100%);
-   width: calc(392 / 452 * 100%);
-}
-
-#buttonExit {
-   background: linear-gradient(180deg, #E5E5E5 0%, #E5E5E5 0.01%, rgba(229, 229, 229, 0) 100%);
-   align-self: flex-start;
-   text-align: right;
-   width: calc(199 / 452 * 100%);
-}
-#buttonExit:not(:hover) > div {
-   transform: translateX(1em);
+#buttonBack {
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -100%);
+   top: calc(-20 / 16 * 1em);
 }
 
 .row {
@@ -296,6 +281,13 @@ button:hover > div {
       </div>
 
       <main>
+         <a href="@main-menu" id="buttonBack">
+            <svg width="90" height="31" viewBox="0 0 90 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1 30.0151L45.1709 13.9849L89.3417 30.0151" stroke="#FF4D00" stroke-opacity="0.29"/>
+               <path d="M1 17.0151L45.1709 0.984922L89.3417 17.0151" stroke="#FFB800" stroke-opacity="0.29"/>
+            </svg>
+         </a>
+
          <header>
             <div class="handle"></div>
             <div class="logo">Versus <span class="logo__x">X</span> <span class="logo__subtitle">shop</span></div>
@@ -327,7 +319,9 @@ button:hover > div {
                                  </linearGradient>
                               </defs>
                            </svg>
-                           <div class="slider__cell-price"></div>
+                           <div class="slider__cell-price">
+                              0
+                           </div>
                         </div>
          
                         <div class="slider__cell" data-value="yellow" data-state="select">
@@ -343,7 +337,7 @@ button:hover > div {
                               </defs>
                            </svg>
                            <div class="slider__cell-price">
-                              <!-- 10 000 -->
+                              10 000
                            </div>
                         </div>
          
@@ -421,6 +415,7 @@ button:hover > div {
                                     stroke-linecap="round" stroke-linejoin="round" />
                            </svg>
                            <div class="slider__cell-price">
+                              0
                            </div>
                         </div>
          
@@ -517,7 +512,7 @@ button:hover > div {
 
                <button class="fitting__amount">
                   <div>
-                     Валюта - <span>10 000</span>
+                     Валюта - <span id="amountEl">10 000</span>
                   </div>
                </button>
             </div>
@@ -557,44 +552,37 @@ class SliderEventData {
 
 $('.slider__arrow_right').click(e => {
    const $slider = $(e.target).parents('.slider'),
-      slider = $slider[0],
-      cellCount = $slider.find('.slider__cell').length,
-      cellWidth = $slider.find('.slider__cell')[0].getBoundingClientRect().width
-      sliderContent = $slider.find('.slider__content')[0];
+   slider = $slider[0];
 
-   if (slider.dataset.current >= cellCount - 1) return;
-   
-   sliderContent.style.left = parseFloat(sliderContent.style.left) - cellWidth + 'px';
-   slider.dataset.current = +slider.dataset.current + 1;
-   
-   onSliderChange(new SliderEventData(
-      slider, 
-      $slider.find('.slider__cell')[slider.dataset.current],
-      'right',
-      slider.dataset.current,
-      cellCount
-   ));
+   scrollSlider($slider, +slider.dataset.current + 1, 'right');
 });
 $('.slider__arrow_left').click(e => {
    const $slider = $(e.target).parents('.slider'),
-      slider = $slider[0],
+   slider = $slider[0];
+
+   scrollSlider($slider, +slider.dataset.current - 1, 'left');
+});
+
+function scrollSlider($slider, i, direction = 'force') {
+   const slider = $slider[0],
       cellCount = $slider.find('.slider__cell').length,
       cellWidth = $slider.find('.slider__cell')[0].getBoundingClientRect().width
       sliderContent = $slider.find('.slider__content')[0];
 
-   if (slider.dataset.current <= 0) return;
+   if (i < 0) return;
+   if (i > cellCount - 1) return;
    
-   sliderContent.style.left = parseFloat(sliderContent.style.left) + cellWidth + 'px';
-   slider.dataset.current = +slider.dataset.current - 1;
+   sliderContent.style.left = -1 * cellWidth * i + 'px';
+   slider.dataset.current = i;
    
    onSliderChange(new SliderEventData(
       slider, 
       $slider.find('.slider__cell')[slider.dataset.current],
-      'left',
+      direction,
       slider.dataset.current,
       cellCount
    ));
-});
+}
 
 /**
  * Handle and process slider changes
@@ -670,7 +658,37 @@ class Fitting {
    }
 }
 
-const fitting = new Fitting('pink', 'pink');</script>
+const fitting = new Fitting('pink', 'pink');
+
+
+// STOP: Server connection & logic
+
+async function syncServerData () {
+   const res = await new Promise(res => getShop(res));
+   let { id: id, shop: shop, amount: amount } = res;
+   shop = JSON.parse(shop);
+
+   console.log('id:', id, 'shop:', shop, 'amount:', amount);
+   
+   amountEl.textContent = amount;
+   
+   const sliderFigure = document.querySelector('.slider[data-type="figure"]'),
+      sliderField = document.querySelector('.slider[data-type="field"]'),
+      cellsFigure = Array.from(sliderFigure.querySelectorAll('.slider__cell')),
+      cellsField = Array.from(sliderField.querySelectorAll('.slider__cell'));
+   
+   for (const figure of cellsFigure) {
+      figure.dataset.state = shop.figure[figure.dataset.value];
+   }
+   for (const field of cellsField) {
+      field.dataset.state = shop.field[field.dataset.value];
+   }
+   
+   scrollSlider($(sliderFigure), cellsFigure.findIndex(cell => cell.dataset.state == 'selected'));
+   scrollSlider($(sliderField), cellsField.findIndex(cell => cell.dataset.state == 'selected'));
+}
+
+syncServerData();</script>
    </body>
 
 </html>

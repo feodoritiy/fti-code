@@ -90,3 +90,17 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
+
+[2021-04-11 23:10:19] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 20, in get_shop
+    'id': storage.id,
+TypeError: 'cefpython_py37.JavascriptCallback' object is not callable
+
+
+[2021-04-12 00:29:32] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 22, in get_shop
+    'shop': res.shop,
+AttributeError: 'dict' object has no attribute 'shop'
+

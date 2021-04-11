@@ -5,6 +5,7 @@ import storage
 
 from logic.register import *
 from logic.login import *
+from logic.shop import *
 
 
 def main():
@@ -18,6 +19,7 @@ def main():
         'function': {
             'register': register,
             'login': login,
+            'getShop': get_shop,
         }
     }) # Loading browser on 'index' page
 

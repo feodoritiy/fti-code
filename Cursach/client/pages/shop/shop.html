@@ -27,6 +27,13 @@
       </div>
 
       <main>
+         <a href="@main-menu" id="buttonBack">
+            <svg width="90" height="31" viewBox="0 0 90 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1 30.0151L45.1709 13.9849L89.3417 30.0151" stroke="#FF4D00" stroke-opacity="0.29"/>
+               <path d="M1 17.0151L45.1709 0.984922L89.3417 17.0151" stroke="#FFB800" stroke-opacity="0.29"/>
+            </svg>
+         </a>
+
          <header>
             <div class="handle"></div>
             <div class="logo">Versus <span class="logo__x">X</span> <span class="logo__subtitle">shop</span></div>
@@ -58,7 +65,9 @@
                                  </linearGradient>
                               </defs>
                            </svg>
-                           <div class="slider__cell-price"></div>
+                           <div class="slider__cell-price">
+                              0
+                           </div>
                         </div>
          
                         <div class="slider__cell" data-value="yellow" data-state="select">
@@ -74,7 +83,7 @@
                               </defs>
                            </svg>
                            <div class="slider__cell-price">
-                              <!-- 10 000 -->
+                              10 000
                            </div>
                         </div>
          
@@ -152,6 +161,7 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                            </svg>
                            <div class="slider__cell-price">
+                              0
                            </div>
                         </div>
          
@@ -248,7 +258,7 @@
 
                <button class="fitting__amount">
                   <div>
-                     Валюта - <span>10 000</span>
+                     Валюта - <span id="amountEl">10 000</span>
                   </div>
                </button>
             </div>
