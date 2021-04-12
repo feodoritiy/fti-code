@@ -33,7 +33,7 @@ public:
    static std::string Read(std::string path);
    static void Write(std::string path, std::string data);
    static json ReadJson(std::string path);
-   static void WriteJson(std::string path, json data);
+   static void WriteJson(std::string path, json data, int indent = -1);
 
    File(std::string abspathToFile);
 

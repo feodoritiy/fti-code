@@ -163,11 +163,33 @@ button:hover > div {
 .slider__arrow {
    cursor: pointer;
 }
+.slider__arrow:hover {
+   animation: arrow-fly-left-right 1s infinite;
+   transition: 0.25s ease;
+}
+@keyframes arrow-fly-left-right {
+   0% {
+      transform: translateX(0em);
+   }
+   25% {
+      transform: translateX(-0.1em);
+   }
+   50% {
+      transform: translateX(0);
+   }
+   75% {
+      transform: translateX(0.1em);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
 
 .slider__content {
    display: flex;
    width: fit-content;
    position: absolute;
+   transition: 0.5s ease;
 }
 
 .slider__cell {
@@ -198,6 +220,7 @@ button:hover > div {
    justify-content: center;
    align-items: center;
 }
+
 
 /* STOP: fitting */
 .fitting {

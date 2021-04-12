@@ -129,6 +129,11 @@ const fitting = new Fitting('pink', 'pink');
 
 // STOP: Server connection & logic
 
+const sliderFigure = document.querySelector('.slider[data-type="figure"]'),
+   sliderField = document.querySelector('.slider[data-type="field"]'),
+   cellsFigure = Array.from(sliderFigure.querySelectorAll('.slider__cell')),
+   cellsField = Array.from(sliderField.querySelectorAll('.slider__cell'));
+
 async function syncServerData () {
    const res = await new Promise(res => getShop(res));
    let { id: id, shop: shop, amount: amount } = res;
@@ -138,10 +143,6 @@ async function syncServerData () {
    
    amountEl.textContent = amount;
    
-   const sliderFigure = document.querySelector('.slider[data-type="figure"]'),
-      sliderField = document.querySelector('.slider[data-type="field"]'),
-      cellsFigure = Array.from(sliderFigure.querySelectorAll('.slider__cell')),
-      cellsField = Array.from(sliderField.querySelectorAll('.slider__cell'));
    
    for (const figure of cellsFigure) {
       figure.dataset.state = shop.figure[figure.dataset.value];
@@ -149,9 +150,47 @@ async function syncServerData () {
    for (const field of cellsField) {
       field.dataset.state = shop.field[field.dataset.value];
    }
-   
+}
+
+function scrollSlidersToSelected() {
    scrollSlider($(sliderFigure), cellsFigure.findIndex(cell => cell.dataset.state == 'selected'));
    scrollSlider($(sliderField), cellsField.findIndex(cell => cell.dataset.state == 'selected'));
 }
 
-syncServerData();
+syncServerData().then(scrollSlidersToSelected);
+
+$('.button_select').click(async e => {
+   const $slider = $(e.target).parents('.slider'),
+      slider = $slider[0],
+      sliderName = slider.dataset.type,
+      productCell = slider.querySelectorAll('.slider__cell')[slider.dataset.current],
+      productName = productCell.dataset.value;
+
+   const res = await new Promise(res => shopSelect(sliderName, productName, res));
+   
+   if (res.status == 'OK') {
+      $slider.find('.slider__cell[data-state="selected"]')[0].dataset.state = "select";
+      $slider.find('.button_select').addClass('dn');
+      $slider.find('.button_selected').removeClass('dn');
+      
+      syncServerData();
+   }
+});
+
+$('.button_buy').click(async e => {
+   const $slider = $(e.target).parents('.slider'),
+      slider = $slider[0],
+      sliderName = slider.dataset.type,
+      productName = slider.querySelectorAll('.slider__cell')[slider.dataset.current].dataset.value;
+
+   const res = await new Promise(res => shopBuy(sliderName, productName, res));
+
+   if (res.status == 'OK') {
+      syncServerData();
+      $slider.find('.slider__footer .button_buy').addClass('dn');
+      $slider.find('.slider__footer .button_select').removeClass('dn');
+   }
+
+   else if (res.status == 'Deprecated')
+      alert('У вас недостаточно средств для покупки товара!!');
+});

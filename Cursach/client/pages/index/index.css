@@ -121,3 +121,56 @@ footer {
 .row {
    display: flex;
 }
+
+@keyframes fly-away-0 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+@keyframes fly-away-10 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   10% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+@keyframes fly-away-30 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   30% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+
+.form_ok input[name="login"] {
+   animation: fly-away-0 1s ease;   
+}
+.form_ok input[name="password"] {
+   animation: fly-away-10 1s ease;   
+}
+.form_ok footer {
+   animation: fly-away-30 1s ease;   
+}

@@ -128,17 +128,62 @@ button:hover > div {
    transform: translateX(0);
 }
 
+@keyframes fade-in-0 {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes fade-in-10 {
+   0% {
+      opacity: 0;
+   }
+   10% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes fade-in-20 {
+   0% {
+      opacity: 0;
+   }
+   20% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes fade-in-30 {
+   0% {
+      opacity: 0;
+   }
+   30% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
 #buttonCreate {
    background: linear-gradient(180deg, #C4C4C4 0%, rgba(250, 255, 0, 0.18) 0.01%, rgba(250, 255, 0, 0) 100%);
    width: calc(432 / 452 * 100%);
+   animation: fade-in-0 1s ease;
 }
 #buttonConnect {
    background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0.29) 0.01%, rgba(255, 184, 0, 0) 100%);
    width: calc(412 / 452 * 100%);
+   animation: fade-in-10 1s ease;
 }
 #buttonShop {
    background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 77, 0, 0.29) 0.01%, rgba(255, 77, 0, 0) 100%);
    width: calc(392 / 452 * 100%);
+   animation: fade-in-20 1s ease;
 }
 
 #buttonExit {
@@ -146,7 +191,9 @@ button:hover > div {
    align-self: flex-start;
    text-align: right;
    width: calc(199 / 452 * 100%);
+   animation: fade-in-30 1s ease;
 }
+
 #buttonExit:not(:hover) > div {
    transform: translateX(1em);
 }

@@ -130,6 +130,60 @@ footer {
 .row {
    display: flex;
 }
+
+@keyframes fly-away-0 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+@keyframes fly-away-10 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   10% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+@keyframes fly-away-30 {
+   0% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   30% {
+      transform: translateX(0em);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(4em);
+      opacity: 0;
+   }
+}
+
+.form_ok input[name="login"] {
+   animation: fly-away-0 1s ease;   
+}
+.form_ok input[name="password"] {
+   animation: fly-away-10 1s ease;   
+}
+.form_ok footer {
+   animation: fly-away-30 1s ease;   
+}
+
       </style>
 
       <meta charset="UTF-8">
@@ -144,8 +198,9 @@ footer {
             <div class="logo">Versus <span class="logo__x">X</span></div>
          </header>
          <form action="#" id="form">
-            <input type="text" name="login" placeholder="Логин">
-            <input type="password" name="password" placeholder="Пароль">
+            <!-- FIXME: remove default values -->
+            <input type="text" name="login" placeholder="Логин" value="Hello">
+            <input type="password" name="password" placeholder="Пароль" value="World">
             <footer class="row">
                <button id="buttonLogin" type="button">
                   <div>Вход</div>
@@ -172,12 +227,15 @@ document.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
 const PROTOCOL = 'http';
 const HOST = '127.0.0.1:1234';
 
+const ENTER_DELAY = 900;
+
 buttonRegister.addEventListener('click', async e => {
    const formData = new FormData(form);
    const res = await new Promise(res => register(formData.get('login'), formData.get('password'), res));
 
    if (res == 'OK') {
-      loadPage('main-menu');
+      form.classList.add('form_ok');
+      setTimeout(() => loadPage('main-menu'), ENTER_DELAY);
    } else { // res == 'Exists'
       alert('Аккаунт с таким логином уже существует, придумайте другой логин.');
    }
@@ -188,7 +246,8 @@ buttonLogin.addEventListener('click', async e => {
    const res = await new Promise(res => login(formData.get('login'), formData.get('password'), res));
 
    if (res == 'OK') {
-      loadPage('main-menu');
+      form.classList.add('form_ok');
+      setTimeout(() => loadPage('main-menu'), ENTER_DELAY);
    } else if (res == 'Wrong-password') {
       alert('Вы ввели неверный пароль.');
    } else { // res == 'Wrong-login'

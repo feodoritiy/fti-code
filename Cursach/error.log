@@ -104,3 +104,52 @@ TypeError: 'cefpython_py37.JavascriptCallback' object is not callable
     'shop': res.shop,
 AttributeError: 'dict' object has no attribute 'shop'
 
+
+[2021-04-12 21:55:41] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 19, in get_shop
+    if (res['status'] == 'OK'):
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 21:57:44] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 19, in get_shop
+    if (res['status'] == 'OK'):
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 22:02:02] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 19, in get_shop
+    if (res['status'] == 'OK'):
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 22:04:24] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 19, in get_shop
+    if (res['status'] == 'OK'):
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 22:45:10] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 41, in shop_select
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 23:05:17] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 41, in shop_select
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-12 23:06:47] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 41, in shop_select
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+

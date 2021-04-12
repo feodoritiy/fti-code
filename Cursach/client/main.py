@@ -20,6 +20,8 @@ def main():
             'register': register,
             'login': login,
             'getShop': get_shop,
+            'shopSelect': shop_select,
+            'shopBuy': shop_buy,
         }
     }) # Loading browser on 'index' page
 

@@ -33,9 +33,9 @@ json File::ReadJson(std::string path) {
    File* f = new File(path);
    return f->readJson();
 }
-void File::WriteJson(std::string path, json data) {
+void File::WriteJson(std::string path, json data, int indent /* = -1 */) {
    File* f = new File(path);
-   f->writeJson(data);
+   f->writeJson(data, indent);
 }
 
 
