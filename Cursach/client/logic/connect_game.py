@@ -7,7 +7,9 @@ import socket
 def connect_game(sid, callback):
    storage.sid = sid
    print('Connect Game: SID =', storage.sid)
+   
    storage.run_server()
+
    res = storage.load('/game', {
       'action': 'connect',
       'id': storage.id,

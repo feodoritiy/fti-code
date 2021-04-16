@@ -1,9 +1,11 @@
 import sys
+import threading
 
 from singlifier import *
 from browser import *
 
 import storage
+import builtins
 
 from logic.register import *
 from logic.login import *
@@ -14,6 +16,8 @@ from logic.game import *
 
 
 def main():
+    print('Main: main thread is', threading.get_ident())
+    
     global singlifier # Global because store HTML of pages, used by Browser to load_page
     singlifier = PageSinglifier() # Constructor do nothing
     singlifier.run() # Generating html files in cache folder
@@ -32,8 +36,10 @@ def main():
             'onSelectFigure': on_select_figure,
             'onUnselectFigure': on_unselect_figure,
             'onChangeFigure': on_change_figure,
+            
             'getGameSid': get_game_sid,
             'getConnectionCount': get_connection_count,
+            'getTasks': get_tasks,
             
             'sendFigureSelect': send_figure_select,
             'sendFigureChange': send_figure_change,

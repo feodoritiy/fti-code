@@ -3,11 +3,17 @@ import base64
 import platform
 import sys
 import os.path as path
+import threading
+
 import storage
+import builtins
 
 class Browser():
     def __init__(self, start_page_name: str, js_bindings: dict):
         storage.browser = self # adding to global object
+        builtins.browser = self
+        
+        self.thread_id = threading.get_ident()
         
         self._check_versions()
         sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
@@ -15,14 +21,14 @@ class Browser():
         settings = {
             # "product_version": "MyProduct/10.00",
             # "user_agent": "MyAgent/20.00 MyProduct/10.00",
-            "debug": True,
+            "debug": False,
             #"log_severity": cef.LOGSEVERITY_INFO,
         }
         cef.Initialize(settings=settings)
 
         start_page = self._html_to_data_uri(self.read(f'./cache/{start_page_name}.html'))
         self.browser = cef.CreateBrowserSync(window_title="Versus X", url=start_page)
-        #self.browser.SetClientHandler(LifespanHandler())
+        self.browser.SetClientHandler(LifespanHandler())
         
         self._bind_to_js(js_bindings)
         
@@ -40,7 +46,11 @@ class Browser():
         self.browser.LoadUrl(data_uri)
         
     def use(self, js_function_name, *args):
+        print(f'Browser: .use(\'{js_function_name}\', {args}) from thread', threading.get_ident())
         self.browser.ExecuteFunction(js_function_name, *args)
+    def exec(self, js_code):
+        print(f'Browser: .exec(\'{js_code}\') from thread', threading.get_ident())
+        self.browser.ExecuteJavascript(js_code)
         
 
     def _check_versions(self):

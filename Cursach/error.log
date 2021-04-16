@@ -515,3 +515,52 @@ requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1
     print(f'Broswer ID: {browser.GetIndetifier()}')
 AttributeError: 'cefpython_py37.PyBrowser' object has no attribute 'GetIndetifier'
 
+
+[2021-04-16 16:42:10] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 87, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+
+
+[2021-04-16 18:20:53] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/connect_game.py", line 21, in connect_game
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-16 21:59:38] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 95, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+
+
+[2021-04-16 22:19:14] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 95, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+
+
+[2021-04-16 22:38:51] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 97, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+
+
+[2021-04-16 23:13:39] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/game.py", line 60, in get_tasks
+    while not storage.queue.empty():
+AttributeError: module 'storage' has no attribute 'queue'
+
+
+[2021-04-16 23:15:36] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 97, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+

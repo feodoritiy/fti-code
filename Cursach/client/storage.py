@@ -2,7 +2,6 @@ from json.decoder import JSONDecodeError
 import sys
 import requests
 import json
-import threading # TODO: remove because of multiprocessing has terminate
 import multiprocessing
 from flask import Flask, request
 import socket
@@ -21,6 +20,7 @@ this.connection_count = None
 this.flask = Flask(__name__)
 this.port = None
 this.host = None
+this.tasks = multiprocessing.Queue(20)
 
 FLASK_HOST = '127.0.0.1'
 

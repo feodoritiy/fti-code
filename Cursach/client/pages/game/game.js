@@ -132,7 +132,7 @@ getGameSid(sid => {
 
 getConnectionCount(count => {
    updateConnectionCount(count);
-})
+});
 
 function updateConnectionCount(count) {
    connectionCount.textContent = count;
@@ -152,3 +152,14 @@ function updateConnectionCount(count) {
    };
    connectionCountWord.textContent = countWord;
 }
+
+
+setInterval(() => {
+   getTasks(tasks => {
+      if (tasks.length > 0)
+         console.log('Running tasks:', tasks);
+      for (const [task, args] of tasks) {
+         window[task](...args);
+      }
+   })
+}, 100);
