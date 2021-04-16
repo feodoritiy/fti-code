@@ -3,9 +3,12 @@ import base64
 import platform
 import sys
 import os.path as path
+import storage
 
 class Browser():
     def __init__(self, start_page_name: str, js_bindings: dict):
+        storage.browser = self # adding to global object
+        
         self._check_versions()
         sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
         
@@ -19,11 +22,12 @@ class Browser():
 
         start_page = self._html_to_data_uri(self.read(f'./cache/{start_page_name}.html'))
         self.browser = cef.CreateBrowserSync(window_title="Versus X", url=start_page)
+        self.browser.SetClientHandler(LifespanHandler())
         
         self._bind_to_js(js_bindings)
         
         cef.MessageLoop()
-        #cef.Shutdown()
+        cef.Shutdown()
     
 
     def read(self, relpath):
@@ -34,6 +38,9 @@ class Browser():
         html = self.read(f'./cache/{page_name}.html')
         data_uri = self._html_to_data_uri(html)
         self.browser.LoadUrl(data_uri)
+        
+    def use(self, js_function_name, *args):
+        self.browser.ExecuteFunction(js_function_name, *args)
         
 
     def _check_versions(self):
@@ -71,3 +78,10 @@ class Browser():
                 bindings.SetObject(key, val)
                 
         self.browser.SetJavascriptBindings(bindings)
+        
+
+class LifespanHandler(object):
+    def OnBeforeClose(self, browser):
+        print(f'Broswer ID: {browser.GetIdentifier()}')
+        print('Browser will close and will exit')
+        storage.connection_process.terminate()

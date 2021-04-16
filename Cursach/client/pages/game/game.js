@@ -1,3 +1,5 @@
+// STOP: Before game
+
 $(buttonReady).click(e => {
    buttonReady.classList.add('dn');
    buttonNotReady.classList.remove('dn');
@@ -10,6 +12,23 @@ $(buttonNotReady).click(e => {
    buttonReady.classList.remove('dn');
 });
 
+$('.figure-select__cell').click(e => {
+   const $currentTarget = $(e.currentTarget),
+      sel = 'figure-select__cell_selected',
+      otherSel = 'figure-select__cell_other-selected';
+   if ($currentTarget.hasClass(otherSel)) return;
+   if ($currentTarget.hasClass(sel)) {
+      $currentTarget.removeClass(sel);
+      return;
+   }
+
+   $('.'+sel).removeClass(sel);
+   $currentTarget.addClass(sel);
+});
+
+
+
+// STOP: Game process
 
 class Ground {
    /**
@@ -64,20 +83,19 @@ class Ground {
 
 
 const ground = new Ground('pink');
-turnIndicator.src = window[`imageFigure_${'yellow'}`].src;
 
 const start = {
-   pink: [
+   pinkX: [
       [0, 0],
       [1, 0],
       [1, 1],
    ],
-   yellow: [
+   yellowO: [
       [2, 0],
       [3, 1],
       [2, 2],
    ],
-   orange: [
+   orangeP: [
       [1, 2],
       [3, 2],
       [4, 2],
@@ -89,4 +107,42 @@ for (let color in start) {
    for (let [ posX, posY ] of positions) {
       ground.put(posX, posY, color);
    }
+}
+
+
+function otherFigureSelect(figureName) {
+   
+}
+function otherFigureUnselect(figureName) {
+
+}
+function otherFigureChange(oldFigureName, newFigureName) {
+   
+}
+
+getGameSid(sid => {
+   sidElement.textContent = sid;
+});
+
+getConnectionCount(count => {
+   updateConnectionCount(count);
+})
+
+function updateConnectionCount(count) {
+   connectionCount.textContent = count;
+   
+   count = +count;
+
+   let countWord;
+   switch (count) {
+      case 1:
+         countWord = 'игрок'; break;
+      case 2:
+      case 3:
+      case 4:
+         countWord = 'игрока'; break;
+      case 5:
+         countWord = 'игроков'; break;
+   };
+   connectionCountWord.textContent = countWord;
 }

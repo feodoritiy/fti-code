@@ -12,16 +12,15 @@ Server server;
 const char* SERVER_HOST = "127.0.0.1";
 const int SERVER_PORT = 1234;
 
-#include "routes/root.cpp"
-#include "routes/register.cpp"
-#include "routes/login.cpp"
-#include "routes/create-game.cpp"
-#include "routes/connect-to-game.cpp"
-#include "routes/exit-game.cpp"
-#include "routes/step.cpp"
-#include "routes/shop.cpp"
+#include "routes/root.h"
+#include "routes/register.h"
+#include "routes/login.h"
+#include "routes/create-game.h"
+#include "routes/game.h"
+#include "routes/shop.h"
 
 int main() {
+   server.set_keep_alive_timeout(30); // timeout 30 sec
 
    server
       .Get("/", RouteRoot::Handler)
@@ -33,12 +32,10 @@ int main() {
       .Get("/login", RouteLogin::GetHandler)
       .Post("/login", RouteLogin::PostHandler)
 
-      .Get("/create-game", RouteCreateGame::GetHandler)
-      .Get("/connect-to-game", RouteConnectToGame::GetHandler)
-      .Get("/exit-game", RouteExitGame::GetHandler)
+      .Post("/create-game", RouteCreateGame::PostHandler)
 
-      .Get("/step", RouteStep::GetHandler)
-      .Post("/step", RouteStep::PostHandler)
+      .Get("/game", RouteGame::GetHandler)
+      .Post("/game", RouteGame::PostHandler)
 
       .Get("/shop", RouteShop::GetHandler)
       .Post("/shop", RouteShop::PostHandler);

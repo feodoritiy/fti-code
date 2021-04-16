@@ -18,11 +18,12 @@ body {
 
 main {
    padding: 1em;
+   padding-bottom: 0.5em;
    background: white;
    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
    border-radius: 30px 0px;
    width: 484px;
-   height: 245px;
+   /*height: 245px;*/
 }
 
 @keyframes fadeIn {
@@ -48,7 +49,7 @@ header {
    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.1);
    border-radius: 16px 0px;
    height: 1.5em;
-   width: calc(100% - 10em);
+   width: calc(100% - 20em);
 }
 
 .logo {
@@ -96,6 +97,7 @@ button:hover > div {
 
 .info__button {
    width: 10em;
+   margin-top: 0.5em;
 }
 
 #buttonReady {
@@ -134,6 +136,11 @@ button:hover > div {
 .game__header > .row, .game__footer > .row {
    align-items: center;
    justify-content: center;
+}
+.game__header > .row {
+   width: calc(322 / 16 * 1em);
+}
+.game__footer > .row {
    width: calc(222 / 16 * 1em);
 }
 
@@ -144,9 +151,6 @@ button:hover > div {
    transform: scale(-1, 1);
 }
 
-#turnIndicator {
-   margin-left: 1em;
-}
 #buttonLeave {
    background: none;
    padding: none;
@@ -154,6 +158,9 @@ button:hover > div {
 
 .handle {
    width: calc(100% - 224 / 16 * 1em);
+}
+.game__header .handle {
+   width: calc(100% - 324 / 16 * 1em);
 }
 
 
@@ -182,4 +189,37 @@ button:hover > div {
    background-repeat: no-repeat;
    width: 100%;
    height: 100%;
+}
+
+.order {
+
+}
+.order__cell > img {
+   transform: scale(0.7);
+}
+.order__cell_current {
+   border-bottom: 3px solid #55555510;
+}
+.order__cell_my {
+   border-bottom: 3px dashed #ff000010;
+}
+
+.figure-select {
+   padding-bottom: 0.5em;
+   align-items: center;
+}
+.figure-select__cell {
+   margin-right: 0.25em;
+   transform: scale(0.9);
+   cursor: pointer;
+   transition: 0.5s;
+}
+.figure-select__cell img {
+   transform: scale(0.9);
+}
+.figure-select__cell_selected {
+   border-bottom: 3px solid #55555510;
+}
+.figure-select__cell_other-selected {
+   border-bottom: 3px dashed #55555510;
 }
