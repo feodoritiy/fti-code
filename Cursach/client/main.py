@@ -34,6 +34,9 @@ def main():
             'onChangeFigure': on_change_figure,
             'getGameSid': get_game_sid,
             'getConnectionCount': get_connection_count,
+            
+            'sendFigureSelect': send_figure_select,
+            'sendFigureChange': send_figure_change,
         }
     }) # Loading browser on 'index' page
     # [data] NO CODE SHOULD BE HERE, BROWSER BLOCK CODE EXECUTION

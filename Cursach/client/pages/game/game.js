@@ -22,8 +22,14 @@ $('.figure-select__cell').click(e => {
       return;
    }
 
-   $('.'+sel).removeClass(sel);
+   const $selected = $('.'+sel);
+   $selected.removeClass(sel);
    $currentTarget.addClass(sel);
+   
+   if ($selected.length == 0)
+      sendFigureSelect(e.currentTarget.dataset.type);
+   else
+      sendFigureChange($selected[0].dataset.type, e.currentTarget.dataset.type);
 });
 
 

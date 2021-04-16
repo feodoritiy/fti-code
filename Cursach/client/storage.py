@@ -36,6 +36,18 @@ def load(path, data):
    except JSONDecodeError:
       print(f'''Error: parsing JSON on storage.load('{path}', {json.dumps(data, indent=3)}).\nIncoming JSON:\n{res.text}''')
    return res
+   
+def gameload(action, data):
+   final_data = {
+      'action': action,
+      'id': this.id,
+      'sid': this.sid,
+   }
+
+   for [key, val] in data.items():
+      final_data[key] = val
+
+   this.load('/game', final_data)
 
 
 # STOP: Local Server
