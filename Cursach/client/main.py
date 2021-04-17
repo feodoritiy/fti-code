@@ -36,10 +36,12 @@ def main():
             # game
             
             'getGameSid': get_game_sid,
+            'getUserId': get_user_id,
             'getConnectionCount': get_connection_count,
             'getConnectionsState': get_connections_state,
             'getTasks': get_tasks,
             'getSkin': get_skin,
+            'getField': get_field_skin,
             
             'sendFigureSelect': send_figure_select,
             'sendFigureUnselect': send_figure_unselect,
@@ -47,6 +49,7 @@ def main():
             'sendReady': send_ready,
             'sendUnready': send_unready,
             'sendDisconnect': send_disconnect,
+            'sendStep': send_step,
         }
     }) # Loading browser on 'index' page
     # [data] NO CODE SHOULD BE HERE, BROWSER BLOCK CODE EXECUTION

@@ -155,7 +155,7 @@ button:hover > div {
    width: calc(322 / 16 * 1em);
 }
 .game__footer > .row {
-   width: calc(222 / 16 * 1em);
+   width: calc(322 / 16 * 1em);
 }
 
 .game__footer {
@@ -205,17 +205,72 @@ button:hover > div {
    height: 100%;
 }
 
+.ground__cell_put-animation {
+   animation: cell-put-animation 0.5s ease;
+}
+@keyframes cell-put-animation {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+.ground__cell_put-animation .ground__figure {
+   animation: figure-put-animation 0.5s ease 0.5s;
+}
+@keyframes figure-put-animation {
+   0% {
+      opacity: 0;
+      transform: scale(0.7);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+
 .order {
 
+}
+.order__cell {
+   position: relative;
+   width: 57px;
+   height: 57px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 .order__cell > img {
    transform: scale(0.7);
 }
+.order__cell::after {
+   display: block;
+   position: absolute;
+   bottom: -1em;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 0.6em;
+   white-space: nowrap;
+}
 .order__cell_current {
-   border-bottom: 3px solid #55555510;
+   /*border-bottom: 3px solid #55555510;*/
+}
+.order__cell_current::after {
+   content: 'Ходит';
 }
 .order__cell_my {
-   border-bottom: 3px dashed #ff000010;
+   /*border-bottom: 3px dashed #ff000010;*/
+}
+.order__cell_my::after {
+   content: 'Вы';
+   color: lightgray;
+}
+.order__cell_my.order__cell_current::after {
+   content: 'Ваш ход';
+   color: black;
+   font-weight: bold;
 }
 
 .figure-select {
@@ -297,7 +352,7 @@ button:hover > div {
       <div class="game dn">
          <div class="game__header">
             <div class="handle"></div>
-            <div class="row" id="order">
+            <div class="row" id="orderEl">
                <div class="order__cell order__cell_current" id="orderCell0"><img src="data:image/png;base64,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
 "/></div>
                <div class="order__cell" id="orderCell1"><img src="data:image/png;base64,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
@@ -538,9 +593,6 @@ $(buttonReady).click(e => {
    else {
       alert('Выберите фигуру прежде чем начать игру');
    }
-   
-   //$('main').addClass('dn');
-   //$('.game').removeClass('dn');
 });
 $(buttonNotReady).click(e => {
    buttonNotReady.classList.add('dn');
@@ -551,7 +603,11 @@ $(buttonNotReady).click(e => {
 $(buttonDisconnect).click(e => {
    sendDisconnect();
    loadPage('main-menu');
-})
+});
+$(buttonLeave).click(e => {
+   sendDisconnect();
+   loadPage('main-menu');
+});
 
 $('.figure-select__cell').click(e => {
    const $currentTarget = $(e.currentTarget);
@@ -582,14 +638,11 @@ class Ground {
     * Consist logic of ground block
     * @param {string} startFieldName image name of field
     */
-   constructor(startFieldName) {
+   constructor() {
       this.el = document.querySelector('.ground');
 
       this.rows = Array.from(this.el.querySelectorAll('.row'));
       this.grid = this.rows.map(row => Array.from(row.querySelectorAll('.ground__cell')));
-      
-      this.fieldName = startFieldName;
-      this.field = startFieldName;
    }
 
    /**
@@ -597,7 +650,6 @@ class Ground {
     */
    set field(valueName) {
       $('.ground__cell').css('background-image', `url("${window[`imageField_${valueName}`].src}")`);
-      this.figure = this.figureName;
       this.fieldName = valueName;
    }
    
@@ -609,7 +661,19 @@ class Ground {
     */
    put(posX, posY, color) {
       const $figure = this.getFigure(posX, posY);
-      $figure.css('background-image', `url("${window[`imageFigure_${color}`].src}")`).parent().css('background-image', '');
+      const $cell = $figure.parent();
+      
+      const onAnimationEnd = e => {
+         $figure[0].removeEventListener('animationend', onAnimationEnd);
+
+         $figure.removeClass('ground__cell_put-animation');
+         $cell.css('background-image', '');
+         
+         $figure.css('background-image', `url("${window[`imageFigure_${color}`].src}")`);
+      };
+
+      $cell[0].addEventListener('animationend', onAnimationEnd);
+      $cell.addClass('ground__cell_put-animation');
    }
    
    /**
@@ -629,32 +693,48 @@ class Ground {
 }
 
 
-const ground = new Ground('pink');
+const ground = new Ground();
 
-const start = {
-   pinkX: [
-      [0, 0],
-      [1, 0],
-      [1, 1],
-   ],
-   yellowO: [
-      [2, 0],
-      [3, 1],
-      [2, 2],
-   ],
-   orangeP: [
-      [1, 2],
-      [3, 2],
-      [4, 2],
-   ],
-};
+document.querySelectorAll('.ground > .row').forEach((row, i) => {
+   row.querySelectorAll('.ground__cell').forEach((cell, j) => {
+      cell.dataset.i = i;
+      cell.dataset.j = j;
+   });
+});
 
-for (let color in start) {
-   const positions = start[color];
-   for (let [ posX, posY ] of positions) {
-      ground.put(posX, posY, color);
+$('.ground__cell').click(e => {
+   const cell = e.currentTarget,
+      $cell = $(cell);
+   
+   if (ORDER.current.data.id == ID) {
+      sendStep(cell.dataset.i, cell.dataset.j, ORDER.current.data);
    }
-}
+});
+
+//const start = {
+//   pinkX: [
+//      [0, 0],
+//      [1, 0],
+//      [1, 1],
+//   ],
+//   yellowO: [
+//      [2, 0],
+//      [3, 1],
+//      [2, 2],
+//   ],
+//   orangeP: [
+//      [1, 2],
+//      [3, 2],
+//      [4, 2],
+//   ],
+//};
+
+//for (let color in start) {
+//   const positions = start[color];
+//   for (let [ posX, posY ] of positions) {
+//      ground.put(posX, posY, color);
+//   }
+//}
 
 function getFigureWithName(figureName) {
    return $('.figure-select__cell').toArray().find(el => el.dataset.type == figureName);
@@ -674,6 +754,10 @@ function otherFigureUnselect(figureName) {
 getGameSid(sid => {
    sidElement.textContent = sid;
 });
+let ID;
+getUserId(id => {
+   ID = id;
+});
 
 getConnectionCount(count => {
    setConnectionCount(count);
@@ -681,6 +765,9 @@ getConnectionCount(count => {
 
 getSkin(skinName => {
    setFigureSkin(skinName);
+});
+getField(fieldName => {
+   setFieldSkin(fieldName);
 });
 
 getConnectionsState(({figures: figures, ready_count: readyCount}) => {
@@ -714,6 +801,9 @@ function setFigureSkin(skinName) {
       $figure.attr('src', window[`imageFigure_${skinName}${el.parentElement.dataset.type.toUpperCase()}`].src);
    });
 }
+function setFieldSkin(skinName) {
+   ground.field = skinName;
+}
 
 function setReadyCount(count) {
    $('.ready-count').text(count);
@@ -722,6 +812,56 @@ function setReadyCount(count) {
 function setSelectedFigures(selectedFigures) {
    for (const figureName of selectedFigures)
       otherFigureSelect(figureName);
+}
+
+const ORDER = {
+   queue: [],
+   els: $('.order__cell').toArray(),
+   current: {
+      i: 0,
+      el: null,
+      data: null,
+   },
+   next() {
+      this.current.el.classList.remove('order__cell_current');
+      
+      this.current.i++;
+
+      if (this.current.i == this.queue.length)
+         this.current.i -= this.queue.length;
+      
+      const i = this.current.i;
+      this.current.el = this.els[i];
+      this.current.data = this.queue[i];
+
+      this.current.el.classList.add('order__cell_current');
+   },
+};
+function startGame(order) {
+   ORDER.queue = order;
+   $('main').addClass('dn');
+   $('.game').removeClass('dn');
+   ORDER.els.forEach((el, i) => {
+      if (i > order.length - 1) {
+         el.classList.add('dn');
+      } else {
+         const img = el.firstElementChild;
+         img.src = window[`imageFigure_${order[i].skin}`].src;
+         if (order[i].id == ID) {
+            el.classList.add('order__cell_my');
+         }
+      }
+      if (i == 0) {
+         el.classList.add('order__cell_current');
+         ORDER.current.el = el;
+         ORDER.current.data = order[i];
+      }
+   });
+}
+function setStep(i, j) {
+   debugger;
+   ground.put(j, i, ORDER.current.data.skin);
+   ORDER.next();
 }
 
 

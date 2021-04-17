@@ -13,6 +13,7 @@ this = sys.modules[__name__]
 this.browser = None
 this.id = None
 this.sid = None
+this.order = None
 this.connection_process = None
 this.is_alive = True
 this.alive_check_process = None
@@ -59,6 +60,7 @@ response_handlers = []
 
 @this.flask.route('/', methods=['POST'])
 def _on_response():
+   print('_on_response: Response handlers', response_handlers)
    req = request.get_json()
    action = req['action']
    print(f'_on_response: Post with action "{action}"')
@@ -75,6 +77,7 @@ def _on_response():
    return response
 
 def add_response_handler(action, callback):
+   print(f'add_repsonse_handler: addign "{action}" with callback', callback)
    response_handlers.append([action, callback])
 
 def run_server():

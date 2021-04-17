@@ -1,4 +1,11 @@
 {
    "sid": 0,
-   "users": []
+   "users": [],
+   "field": [
+      [null,null, null,null, null,null, null,null],
+      [null,null, null,null, null,null, null,null],
+      [null,null, null,null, null,null, null,null],
+      [null,null, null,null, null,null, null,null],
+      [null,null, null,null, null,null, null,null]
+   ]
 }

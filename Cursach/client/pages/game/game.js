@@ -13,9 +13,6 @@ $(buttonReady).click(e => {
    else {
       alert('Выберите фигуру прежде чем начать игру');
    }
-   
-   //$('main').addClass('dn');
-   //$('.game').removeClass('dn');
 });
 $(buttonNotReady).click(e => {
    buttonNotReady.classList.add('dn');
@@ -26,7 +23,11 @@ $(buttonNotReady).click(e => {
 $(buttonDisconnect).click(e => {
    sendDisconnect();
    loadPage('main-menu');
-})
+});
+$(buttonLeave).click(e => {
+   sendDisconnect();
+   loadPage('main-menu');
+});
 
 $('.figure-select__cell').click(e => {
    const $currentTarget = $(e.currentTarget);
@@ -57,14 +58,11 @@ class Ground {
     * Consist logic of ground block
     * @param {string} startFieldName image name of field
     */
-   constructor(startFieldName) {
+   constructor() {
       this.el = document.querySelector('.ground');
 
       this.rows = Array.from(this.el.querySelectorAll('.row'));
       this.grid = this.rows.map(row => Array.from(row.querySelectorAll('.ground__cell')));
-      
-      this.fieldName = startFieldName;
-      this.field = startFieldName;
    }
 
    /**
@@ -72,7 +70,6 @@ class Ground {
     */
    set field(valueName) {
       $('.ground__cell').css('background-image', `url("${window[`imageField_${valueName}`].src}")`);
-      this.figure = this.figureName;
       this.fieldName = valueName;
    }
    
@@ -84,7 +81,19 @@ class Ground {
     */
    put(posX, posY, color) {
       const $figure = this.getFigure(posX, posY);
-      $figure.css('background-image', `url("${window[`imageFigure_${color}`].src}")`).parent().css('background-image', '');
+      const $cell = $figure.parent();
+      
+      const onAnimationEnd = e => {
+         $figure[0].removeEventListener('animationend', onAnimationEnd);
+
+         $figure.removeClass('ground__cell_put-animation');
+         $cell.css('background-image', '');
+         
+         $figure.css('background-image', `url("${window[`imageFigure_${color}`].src}")`);
+      };
+
+      $cell[0].addEventListener('animationend', onAnimationEnd);
+      $cell.addClass('ground__cell_put-animation');
    }
    
    /**
@@ -104,32 +113,48 @@ class Ground {
 }
 
 
-const ground = new Ground('pink');
+const ground = new Ground();
 
-const start = {
-   pinkX: [
-      [0, 0],
-      [1, 0],
-      [1, 1],
-   ],
-   yellowO: [
-      [2, 0],
-      [3, 1],
-      [2, 2],
-   ],
-   orangeP: [
-      [1, 2],
-      [3, 2],
-      [4, 2],
-   ],
-};
+document.querySelectorAll('.ground > .row').forEach((row, i) => {
+   row.querySelectorAll('.ground__cell').forEach((cell, j) => {
+      cell.dataset.i = i;
+      cell.dataset.j = j;
+   });
+});
 
-for (let color in start) {
-   const positions = start[color];
-   for (let [ posX, posY ] of positions) {
-      ground.put(posX, posY, color);
+$('.ground__cell').click(e => {
+   const cell = e.currentTarget,
+      $cell = $(cell);
+   
+   if (ORDER.current.data.id == ID) {
+      sendStep(cell.dataset.i, cell.dataset.j, ORDER.current.data);
    }
-}
+});
+
+//const start = {
+//   pinkX: [
+//      [0, 0],
+//      [1, 0],
+//      [1, 1],
+//   ],
+//   yellowO: [
+//      [2, 0],
+//      [3, 1],
+//      [2, 2],
+//   ],
+//   orangeP: [
+//      [1, 2],
+//      [3, 2],
+//      [4, 2],
+//   ],
+//};
+
+//for (let color in start) {
+//   const positions = start[color];
+//   for (let [ posX, posY ] of positions) {
+//      ground.put(posX, posY, color);
+//   }
+//}
 
 function getFigureWithName(figureName) {
    return $('.figure-select__cell').toArray().find(el => el.dataset.type == figureName);
@@ -149,6 +174,10 @@ function otherFigureUnselect(figureName) {
 getGameSid(sid => {
    sidElement.textContent = sid;
 });
+let ID;
+getUserId(id => {
+   ID = id;
+});
 
 getConnectionCount(count => {
    setConnectionCount(count);
@@ -156,6 +185,9 @@ getConnectionCount(count => {
 
 getSkin(skinName => {
    setFigureSkin(skinName);
+});
+getField(fieldName => {
+   setFieldSkin(fieldName);
 });
 
 getConnectionsState(({figures: figures, ready_count: readyCount}) => {
@@ -189,6 +221,9 @@ function setFigureSkin(skinName) {
       $figure.attr('src', window[`imageFigure_${skinName}${el.parentElement.dataset.type.toUpperCase()}`].src);
    });
 }
+function setFieldSkin(skinName) {
+   ground.field = skinName;
+}
 
 function setReadyCount(count) {
    $('.ready-count').text(count);
@@ -197,6 +232,56 @@ function setReadyCount(count) {
 function setSelectedFigures(selectedFigures) {
    for (const figureName of selectedFigures)
       otherFigureSelect(figureName);
+}
+
+const ORDER = {
+   queue: [],
+   els: $('.order__cell').toArray(),
+   current: {
+      i: 0,
+      el: null,
+      data: null,
+   },
+   next() {
+      this.current.el.classList.remove('order__cell_current');
+      
+      this.current.i++;
+
+      if (this.current.i == this.queue.length)
+         this.current.i -= this.queue.length;
+      
+      const i = this.current.i;
+      this.current.el = this.els[i];
+      this.current.data = this.queue[i];
+
+      this.current.el.classList.add('order__cell_current');
+   },
+};
+function startGame(order) {
+   ORDER.queue = order;
+   $('main').addClass('dn');
+   $('.game').removeClass('dn');
+   ORDER.els.forEach((el, i) => {
+      if (i > order.length - 1) {
+         el.classList.add('dn');
+      } else {
+         const img = el.firstElementChild;
+         img.src = window[`imageFigure_${order[i].skin}`].src;
+         if (order[i].id == ID) {
+            el.classList.add('order__cell_my');
+         }
+      }
+      if (i == 0) {
+         el.classList.add('order__cell_current');
+         ORDER.current.el = el;
+         ORDER.current.data = order[i];
+      }
+   });
+}
+function setStep(i, j) {
+   debugger;
+   ground.put(j, i, ORDER.current.data.skin);
+   ORDER.next();
 }
 
 

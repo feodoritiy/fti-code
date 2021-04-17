@@ -7,10 +7,10 @@
       "shop": {
          "field": {
             "crystal": "select",
-            "frame": "buy",
+            "frame": "selected",
             "leopard": "buy",
             "pink": "select",
-            "sky": "selected"
+            "sky": "select"
          },
          "figure": {
             "black": "buy",

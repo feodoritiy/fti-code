@@ -3,8 +3,10 @@
       "sid": 0,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:35723",
+            "id": 1,
+            "ready": false
          }
       ]
    },
@@ -12,8 +14,16 @@
       "sid": 1,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "t",
+            "host": "127.0.0.1:35121",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:42873",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -21,8 +31,16 @@
       "sid": 2,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:53945",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "t",
+            "host": "127.0.0.1:60173",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -30,8 +48,16 @@
       "sid": 3,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "t",
+            "host": "127.0.0.1:40837",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "p",
+            "host": "127.0.0.1:38625",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -39,8 +65,16 @@
       "sid": 4,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:57867",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "t",
+            "host": "127.0.0.1:43595",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -48,8 +82,16 @@
       "sid": 5,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "o",
+            "host": "127.0.0.1:45537",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "r",
+            "host": "127.0.0.1:41631",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -57,8 +99,16 @@
       "sid": 6,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:37401",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "t",
+            "host": "127.0.0.1:59013",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -66,8 +116,16 @@
       "sid": 7,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:38515",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:56727",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -75,8 +133,16 @@
       "sid": 8,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:42239",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:37813",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -84,8 +150,16 @@
       "sid": 9,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:59813",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:36475",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -93,8 +167,16 @@
       "sid": 10,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "t",
+            "host": "127.0.0.1:42271",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:55135",
+            "id": 2,
+            "ready": true
          }
       ]
    },
@@ -102,1572 +184,2027 @@
       "sid": 11,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:58075",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:49071",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [],
       "sid": 12,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "t",
+            "host": "127.0.0.1:59899",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "p",
+            "host": "127.0.0.1:36339",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            1,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 13,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:57851",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:48211",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            2,
+            1,
+            1,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 14,
       "users": [
          {
-            "host": "127.0.0.1",
-            "id": "1"
+            "figure": "r",
+            "host": "127.0.0.1:35889",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:56593",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 15,
-      "users": []
+      "users": [
+         {
+            "figure": "o",
+            "host": "127.0.0.1:35967",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:42907",
+            "id": 2,
+            "ready": true
+         }
+      ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            2,
+            null,
+            2,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            1,
+            1,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 16,
-      "users": []
+      "users": [
+         {
+            "figure": "p",
+            "host": "127.0.0.1:59835",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "t",
+            "host": "127.0.0.1:40395",
+            "id": 2,
+            "ready": true
+         }
+      ]
    },
    {
+      "field": [
+         [
+            1,
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 17,
-      "users": []
+      "users": [
+         {
+            "figure": "t",
+            "host": "127.0.0.1:57693",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:50093",
+            "id": 2,
+            "ready": true
+         }
+      ]
    },
    {
+      "field": [
+         [
+            1,
+            2,
+            2,
+            null,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 18,
       "users": [
          {
-            "host": "127.0.0.1:51159",
-            "id": 1
+            "figure": "t",
+            "host": "127.0.0.1:57381",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:59533",
-            "id": 2
+            "figure": "o",
+            "host": "127.0.0.1:40889",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 19,
       "users": [
          {
-            "host": "127.0.0.1:40089",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:52591",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:35505",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:41871",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            2,
+            1,
+            2,
+            2,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            1,
+            2,
+            2,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            2,
+            2,
+            1,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 20,
       "users": [
          {
-            "host": "127.0.0.1:44297",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:41423",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:60797",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:53815",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            2,
+            null,
+            1,
+            1,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 21,
       "users": [
          {
-            "host": "127.0.0.1:44389",
-            "id": 1
+            "figure": "o",
+            "host": "127.0.0.1:38513",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:49473",
-            "id": 2
+            "figure": "t",
+            "host": "127.0.0.1:55461",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 22,
       "users": [
          {
-            "host": "127.0.0.1:43177",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:51275",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:59635",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:40901",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 23,
       "users": [
          {
-            "host": "127.0.0.1:58999",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:42019",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:58037",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:34213",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 24,
       "users": [
          {
-            "host": "127.0.0.1:56501",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:41627",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:34217",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:59909",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 25,
       "users": [
          {
-            "host": "127.0.0.1:56959",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:51387",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:49093",
-            "id": 2
-         },
-         {
-            "host": "127.0.0.1:43643",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:50275",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 26,
       "users": [
          {
-            "host": "127.0.0.1:36067",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:44085",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:36931",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:36131",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 27,
       "users": [
          {
-            "host": "127.0.0.1:46141",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:43801",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:46419",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:54713",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 28,
       "users": [
          {
-            "host": "127.0.0.1:50909",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:58663",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:37483",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:36057",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            0,
+            null,
+            0,
+            0,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            0
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 29,
       "users": [
          {
-            "host": "127.0.0.1:37425",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:52975",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:33599",
-            "id": 2
-         },
-         {
-            "host": "127.0.0.1:58127",
-            "id": 1
+            "figure": "x",
+            "host": "127.0.0.1:47555",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            0,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 30,
       "users": [
          {
-            "host": "127.0.0.1:50823",
-            "id": 1
+            "figure": "r",
+            "host": "127.0.0.1:42007",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:33805",
-            "id": 2
-         },
-         {
-            "host": "127.0.0.1:36789",
-            "id": 1
+            "figure": "t",
+            "host": "127.0.0.1:43741",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 31,
       "users": [
          {
-            "host": "127.0.0.1:50273",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:47289",
+            "id": 1,
+            "ready": true
          },
          {
-            "host": "127.0.0.1:40773",
-            "id": 2
-         },
-         {
-            "host": "127.0.0.1:48491",
-            "id": 2
+            "figure": "x",
+            "host": "127.0.0.1:54479",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 32,
       "users": [
          {
-            "host": "127.0.0.1:44787",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:60563",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:55431",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 33,
       "users": [
          {
-            "host": "127.0.0.1:55721",
-            "id": 1
+            "figure": "t",
+            "host": "127.0.0.1:51841",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "p",
+            "host": "127.0.0.1:55189",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 34,
       "users": [
          {
-            "host": "127.0.0.1:48365",
-            "id": 1
+            "figure": "",
+            "host": "127.0.0.1:49995",
+            "id": 1,
+            "ready": false
+         },
+         {
+            "figure": "",
+            "host": "127.0.0.1:36927",
+            "id": 2,
+            "ready": false
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 35,
       "users": [
          {
-            "host": "127.0.0.1:42653",
-            "id": 1
+            "figure": "o",
+            "host": "127.0.0.1:51745",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:53475",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 36,
       "users": [
          {
-            "host": "127.0.0.1:57161",
-            "id": 1
+            "figure": "t",
+            "host": "127.0.0.1:33735",
+            "id": 1,
+            "ready": false
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 37,
       "users": [
          {
-            "host": "127.0.0.1:59143",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:39295",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:44999",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 38,
       "users": [
          {
-            "host": "127.0.0.1:40149",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:57763",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:34911",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 39,
       "users": [
          {
-            "host": "127.0.0.1:59857",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:47759",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:43163",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 40,
       "users": [
          {
-            "host": "127.0.0.1:56847",
-            "id": 1
+            "figure": "p",
+            "host": "127.0.0.1:56359",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:54559",
+            "id": 2,
+            "ready": true
          }
       ]
    },
    {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            1,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            1,
+            2,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            2,
+            null,
+            1,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
       "sid": 41,
       "users": [
          {
-            "host": "127.0.0.1:35773",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 42,
-      "users": [
-         {
-            "host": "127.0.0.1:55687",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 43,
-      "users": [
-         {
-            "host": "127.0.0.1:60739",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 44,
-      "users": [
-         {
-            "host": "127.0.0.1:60429",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 45,
-      "users": [
-         {
-            "host": "127.0.0.1:35179",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 46,
-      "users": [
-         {
-            "host": "127.0.0.1:49933",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 47,
-      "users": [
-         {
-            "host": "127.0.0.1:42515",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 48,
-      "users": [
-         {
-            "host": "127.0.0.1:45319",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 49,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:44739",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 50,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45369",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:58843",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 51,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:53043",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:48079",
-            "id": 2
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:59097",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 52,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:57701",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:59067",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 53,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:51171",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:41991",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 54,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:36163",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:33241",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:43185",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:33641",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 55,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:39049",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:47045",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:53565",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:55667",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:60655",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:41017",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:36033",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:53165",
-            "id": 2
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:52979",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:43337",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:38387",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:43489",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:41195",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:37671",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:51411",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:51567",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:41765",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:42951",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56155",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:33717",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:55861",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:49595",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:49197",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:46925",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:60069",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:36725",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:35017",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54947",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:49523",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:50581",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:48381",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:48785",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54793",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:33021",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:50223",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:50033",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:46239",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:58525",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 56,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:57165",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:58431",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:47699",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56175",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:43599",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:58933",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54349",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:39645",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:42255",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:44675",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 57,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45973",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:53681",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 58,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:53817",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:39555",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 59,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:34729",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:47697",
-            "id": 2
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:39193",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 60,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:41803",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:43287",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 61,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:44785",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56861",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 62,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:50169",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:60481",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:38149",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 63,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:59885",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56495",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 64,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:46347",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54923",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 65,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:57463",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:47661",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 66,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45411",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:37657",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 67,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:40019",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:49427",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 68,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:37227",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54063",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 69,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:50307",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:50141",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 70,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:49823",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56115",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 71,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45843",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:35829",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 72,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:57683",
-            "id": 1
-         },
-         {
-            "figure": "x",
-            "host": "127.0.0.1:38691",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 73,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:34897",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:56295",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 74,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:48729",
-            "id": 1
-         },
-         {
-            "figure": "x",
-            "host": "127.0.0.1:47819",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 75,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:47379",
-            "id": 1
-         },
-         {
             "figure": "p",
-            "host": "127.0.0.1:39655",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 76,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:60069",
-            "id": 1
+            "host": "127.0.0.1:56817",
+            "id": 1,
+            "ready": true
          },
          {
             "figure": "o",
-            "host": "127.0.0.1:60351",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 77,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:49251",
-            "id": 1
-         },
-         {
-            "figure": "x",
-            "host": "127.0.0.1:39013",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 78,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:51323",
-            "id": 1
-         },
-         {
-            "figure": "x",
-            "host": "127.0.0.1:59715",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 79,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:54585",
-            "id": 1
-         },
-         {
-            "figure": "x",
-            "host": "127.0.0.1:37211",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 80,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:36639",
-            "id": 1
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:47379",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 81,
-      "users": [
-         {
-            "figure": "p",
-            "host": "127.0.0.1:37869",
-            "id": 1
-         },
-         {
-            "figure": "t",
-            "host": "127.0.0.1:46195",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 82,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:49495",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 83,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:34531",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 84,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:46791",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 85,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:57577",
-            "id": 1
-         },
-         {
-            "figure": "o",
-            "host": "127.0.0.1:49063",
-            "id": 2
-         }
-      ]
-   },
-   {
-      "sid": 86,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:54915",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 87,
-      "users": [
-         {
-            "figure": "o",
-            "host": "127.0.0.1:35729",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 88,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:58717",
-            "id": 1
-         }
-      ]
-   },
-   {
-      "sid": 89,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:32895",
-            "id": 1,
-            "ready": false
-         },
-         {
-            "figure": "p",
-            "host": "127.0.0.1:39829",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 90,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:33867",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 91,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:44725",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 92,
-      "users": [
-         {
-            "figure": "r",
-            "host": "127.0.0.1:50419",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 93,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:56551",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 94,
-      "users": [
-         {
-            "figure": "p",
-            "host": "127.0.0.1:48211",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 95,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:50973",
-            "id": 1,
-            "ready": true
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:54069",
-            "id": 2,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 96,
-      "user": null,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:32971",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 97,
-      "user": null,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:54911",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 98,
-      "user": null,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:51877",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 99,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45273",
-            "id": 1,
-            "ready": false
-         },
-         {
-            "figure": "t",
-            "host": "127.0.0.1:38235",
-            "id": 2,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 100,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:51249",
-            "id": 1,
-            "ready": false
-         },
-         {
-            "figure": "t",
-            "host": "127.0.0.1:47591",
-            "id": 2,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 101,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:58667",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 102,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45537",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 103,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:59289",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 104,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:45759",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 105,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:41719",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 106,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:53127",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 107,
-      "user": null,
-      "users": []
-   },
-   {
-      "sid": 108,
-      "user": null,
-      "users": []
-   },
-   {
-      "sid": 109,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:47611",
-            "id": 2,
-            "ready": true
-         },
-         {
-            "figure": "p",
-            "host": "127.0.0.1:42391",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 110,
-      "users": []
-   },
-   {
-      "sid": 111,
-      "users": []
-   },
-   {
-      "sid": 112,
-      "users": []
-   },
-   {
-      "sid": 113,
-      "users": []
-   },
-   {
-      "sid": 114,
-      "users": []
-   },
-   {
-      "sid": 115,
-      "users": []
-   },
-   {
-      "sid": 116,
-      "users": []
-   },
-   {
-      "sid": 117,
-      "users": [
-         {
-            "figure": "t",
-            "host": "127.0.0.1:36531",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 118,
-      "users": []
-   },
-   {
-      "sid": 119,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:34637",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 120,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:33623",
-            "id": 1,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 121,
-      "users": [
-         {
-            "figure": "",
-            "host": "127.0.0.1:50391",
-            "id": 1,
-            "ready": false
-         },
-         {
-            "figure": "",
-            "host": "127.0.0.1:59693",
-            "id": 2,
-            "ready": false
-         }
-      ]
-   },
-   {
-      "sid": 122,
-      "users": [
-         {
-            "figure": "r",
-            "host": "127.0.0.1:48105",
-            "id": 1,
-            "ready": true
-         }
-      ]
-   },
-   {
-      "sid": 123,
-      "users": []
-   },
-   {
-      "sid": 124,
-      "users": [
-         {
-            "figure": "r",
-            "host": "127.0.0.1:55237",
-            "id": 1,
-            "ready": true
-         },
-         {
-            "figure": "t",
-            "host": "127.0.0.1:40399",
+            "host": "127.0.0.1:44997",
             "id": 2,
             "ready": true
          }

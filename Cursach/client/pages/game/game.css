@@ -146,7 +146,7 @@ button:hover > div {
    width: calc(322 / 16 * 1em);
 }
 .game__footer > .row {
-   width: calc(222 / 16 * 1em);
+   width: calc(322 / 16 * 1em);
 }
 
 .game__footer {
@@ -196,17 +196,72 @@ button:hover > div {
    height: 100%;
 }
 
+.ground__cell_put-animation {
+   animation: cell-put-animation 0.5s ease;
+}
+@keyframes cell-put-animation {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+.ground__cell_put-animation .ground__figure {
+   animation: figure-put-animation 0.5s ease 0.5s;
+}
+@keyframes figure-put-animation {
+   0% {
+      opacity: 0;
+      transform: scale(0.7);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+
 .order {
 
+}
+.order__cell {
+   position: relative;
+   width: 57px;
+   height: 57px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 .order__cell > img {
    transform: scale(0.7);
 }
+.order__cell::after {
+   display: block;
+   position: absolute;
+   bottom: -1em;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 0.6em;
+   white-space: nowrap;
+}
 .order__cell_current {
-   border-bottom: 3px solid #55555510;
+   /*border-bottom: 3px solid #55555510;*/
+}
+.order__cell_current::after {
+   content: 'Ходит';
 }
 .order__cell_my {
-   border-bottom: 3px dashed #ff000010;
+   /*border-bottom: 3px dashed #ff000010;*/
+}
+.order__cell_my::after {
+   content: 'Вы';
+   color: lightgray;
+}
+.order__cell_my.order__cell_current::after {
+   content: 'Ваш ход';
+   color: black;
+   font-weight: bold;
 }
 
 .figure-select {

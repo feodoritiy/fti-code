@@ -9,6 +9,8 @@ using json = nlohmann::json;
 #include <File/File.h>
 
 namespace RouteGame {
+   json getGameData(size_t sid);
+   std::string getUserSkin(size_t id);
    
    std::string pwd = File::pwd();
 
@@ -40,6 +42,32 @@ namespace RouteGame {
       
       return *targetGame;
    }
+   json getGameOrder(size_t sid) {
+      json users = getGameData(sid)["users"];
+
+      json res = json::array();
+      for (auto& user : users) {
+         json userData;
+         
+         size_t id = user["id"].get<size_t>();
+         userData["id"] = id;
+         
+         std::string figureName = user["figure"].get<std::string>(),
+            figureNameUpper;
+         if (figureName == "x") figureNameUpper = "X";
+         else if (figureName == "o") figureNameUpper = "O";
+         else if (figureName == "p") figureNameUpper = "P";
+         else if (figureName == "t") figureNameUpper = "T";
+         else if (figureName == "r") figureNameUpper = "R";
+         userData["skin"] = getUserSkin(id) + figureNameUpper;
+
+         res.push_back(userData);
+      }
+
+      std::random_shuffle(res.begin(), res.end());
+
+      return res;
+   }
    
    size_t getReadyCount(size_t sid) {
       json game = getGameData(sid);
@@ -51,6 +79,10 @@ namespace RouteGame {
       }
 
       return count;
+   }
+   size_t getConnectionCount(size_t sid) {
+      json game = getGameData(sid);
+      return game["users"].size();
    }
 
    void withGame(size_t sid, std::function<void(json game)> callback) {
@@ -67,6 +99,26 @@ namespace RouteGame {
             return;
          }
       }
+   }
+   
+   std::string getUserSkin(size_t id) {
+      std::string skinName;
+
+      // search for user selected skin
+      withUser(id, [&](json user){
+         json figuresState = user["shop"]["figure"];
+         for (auto it = figuresState.begin(); it != figuresState.end(); it++) {
+            auto key = it.key();
+            auto val = it.value().get<std::string>();
+
+            if (val == "selected") {
+               skinName = key;
+               break;
+            }
+         }
+      });
+      
+      return skinName;
    }
    
    void sendAll(size_t sid, size_t senderId, std::string action, json data) {
@@ -110,6 +162,13 @@ namespace RouteGame {
          }
 
          callback(targetUser);
+      });
+   }
+   
+   void updateCell(size_t sid, size_t i, size_t j, std::function<size_t(json*)> callback) {
+      updateGameData(sid, [&](json* game){
+         json& field = game->at("field");
+         field[i][j] = callback(&field[i][j]);
       });
    }
 
@@ -208,13 +267,45 @@ namespace RouteGame {
          });
       }
       
+      // Action: Step
+      else if (action == "step") {
+         std::string skin = getParam(req, "skin"); 
+         
+         size_t i = std::stoi(getParam(req, "i")), 
+            j = std::stoi(getParam(req, "j"));
+
+         updateCell(sid, i, j, [&](json* cell){
+            if (cell->is_null()) {
+               return id;
+            }
+         });
+         
+         sendAll(sid, id, action, json{
+            {"i", i},
+            {"j", j},
+         });
+         answer_json(res, action, json{
+            {"status", "OK"},
+         });
+      }
+      
       // Action: Get-skin
       else if (action == "get-skin") {
+         std::string skinName = getUserSkin(id);
+         // sending answer
+         answer_json(res, action, json{
+            {"status", "OK"},
+            {"skin", skinName},
+         });
+      }
+
+      // Action: Get-field-skin
+      else if (action == "get-field-skin") {
          std::string skinName;
          // search for user selected skin
          withUser(id, [&](json user){
-            json figuresState = user["shop"]["figure"];
-            for (auto it = figuresState.begin(); it != figuresState.end(); it++) {
+            json fieldState = user["shop"]["field"];
+            for (auto it = fieldState.begin(); it != fieldState.end(); it++) {
                auto key = it.key();
                auto val = it.value().get<std::string>();
 
@@ -304,9 +395,16 @@ namespace RouteGame {
             (*user)["ready"] = true;
          });
          answer_json(res, action, json{});
+         size_t readyCount = getReadyCount(sid),
+            connectionCount = getConnectionCount(sid);
          sendAll(sid, id, "ready-count-update", json{
-            {"count", getReadyCount(sid)},
+            {"count", readyCount},
          });
+         if (readyCount == connectionCount && (2 <= readyCount && readyCount <= 5)) {
+            sendAll(sid, id, "game-start", json{
+               {"order", getGameOrder(sid)},
+            });
+         }
       }
 
       // Action: Unready
