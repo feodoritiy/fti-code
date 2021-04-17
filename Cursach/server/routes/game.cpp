@@ -158,6 +158,21 @@ namespace RouteGame {
 
       return connectionCount;
    }
+   
+   void deleteGame(size_t sid) {
+      File* gameFile = new File(pwd + "/../data/game.json");
+      json games = gameFile->readJson();
+
+      size_t i = 0;
+      for (json& game : games) {
+         if (game["sid"].get<size_t>() == sid)
+            break;
+         i++;
+      }
+      
+      games.erase(games.begin() + i);
+      gameFile->writeJson(games, 3);
+   }
 
 
    void GetHandler(const Request& req, Response& res) {
@@ -324,6 +339,10 @@ namespace RouteGame {
          sendAll(sid, id, "ready-count-update", json{
             {"count", getReadyCount(sid)},
          });
+         
+         if (connectionCount == 0) {
+            deleteGame(sid);
+         }
       }
       
       
