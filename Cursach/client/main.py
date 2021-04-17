@@ -32,17 +32,21 @@ def main():
             'shopBuy': shop_buy,
             'createGame': create_game,
             'connectGame': connect_game,
+
             # game
-            'onSelectFigure': on_select_figure,
-            'onUnselectFigure': on_unselect_figure,
-            'onChangeFigure': on_change_figure,
             
             'getGameSid': get_game_sid,
             'getConnectionCount': get_connection_count,
+            'getConnectionsState': get_connections_state,
             'getTasks': get_tasks,
+            'getSkin': get_skin,
             
             'sendFigureSelect': send_figure_select,
+            'sendFigureUnselect': send_figure_unselect,
             'sendFigureChange': send_figure_change,
+            'sendReady': send_ready,
+            'sendUnready': send_unready,
+            'sendDisconnect': send_disconnect,
         }
     }) # Loading browser on 'index' page
     # [data] NO CODE SHOULD BE HERE, BROWSER BLOCK CODE EXECUTION

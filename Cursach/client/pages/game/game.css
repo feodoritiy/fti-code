@@ -98,6 +98,7 @@ button:hover > div {
 .info__button {
    width: 10em;
    margin-top: 0.5em;
+   display: inline-block;
 }
 
 #buttonReady {
@@ -105,6 +106,10 @@ button:hover > div {
 }
 #buttonNotReady {
    background: linear-gradient(180deg, rgba(255, 184, 0, 0.29) 0%, rgba(255, 184, 0, 0) 100%);
+}
+#buttonDisconnect {
+   float: right;
+   background: linear-gradient(180deg, rgba(255, 77, 0, 0.29) 0%, rgba(255, 184, 0, 0) 100%);
 }
 
 .info p span {

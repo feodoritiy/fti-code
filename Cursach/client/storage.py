@@ -20,7 +20,10 @@ this.connection_count = None
 this.flask = Flask(__name__)
 this.port = None
 this.host = None
+
 this.tasks = multiprocessing.Queue(20)
+def add_task(js_func_name, *args):
+   this.tasks.put([js_func_name, args])
 
 FLASK_HOST = '127.0.0.1'
 
@@ -47,7 +50,7 @@ def gameload(action, data):
    for [key, val] in data.items():
       final_data[key] = val
 
-   this.load('/game', final_data)
+   return this.load('/game', final_data)
 
 
 # STOP: Local Server

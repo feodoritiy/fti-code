@@ -10,6 +10,7 @@ using json = nlohmann::json;
 
 namespace RouteGame {
    
+   std::string pwd = File::pwd();
 
    std::string getParam(const Request& req, std::string paramName) {
       if (!req.has_param(paramName.c_str())) {
@@ -26,7 +27,6 @@ namespace RouteGame {
    }
 
    json getGameData(size_t sid) {
-      std::cout << "Not callback game file read\n";
       File* gameFile = new File(File::pwd() + "/../data/game.json");
       json games = gameFile->readJson();
 
@@ -40,14 +40,38 @@ namespace RouteGame {
       
       return *targetGame;
    }
+   
+   size_t getReadyCount(size_t sid) {
+      json game = getGameData(sid);
+      size_t count = 0;
+
+      for (auto user : game["users"]) {
+         if (user["ready"].get<bool>())
+            count++;
+      }
+
+      return count;
+   }
 
    void withGame(size_t sid, std::function<void(json game)> callback) {
       json game = getGameData(sid);
       callback(game);
    }
+   void withUser(size_t id, std::function<void(json user)> callback) {
+      File* userFile = new File(pwd + "/../data/users.json");
+      json users = userFile->readJson();
+
+      for (auto user : users) {
+         if (user["id"].get<size_t>() == id) {
+            callback(user);
+            return;
+         }
+      }
+   }
    
-   void sendAll(size_t sid, std::string action, json data) {
+   void sendAll(size_t sid, size_t senderId, std::string action, json data) {
       data["action"] = action;
+      data["sender_id"] = senderId;
       std::cout << "Game, sendAll: action '" << action << "' with data " << data.dump() << '\n';
 
       json game = getGameData(sid);
@@ -60,8 +84,7 @@ namespace RouteGame {
    }
    
    void updateGameData(size_t sid, std::function<void(json* game)> callback) {
-      std::cout << "Callback game file read\n";
-      File* gameFile = new File(File::pwd() + "/../data/game.json");
+      File* gameFile = new File(pwd + "/../data/game.json");
       json games = gameFile->readJson();
 
       json* targetGame;
@@ -116,12 +139,32 @@ namespace RouteGame {
 
       return res;
    }
+   
+   size_t deleteGameUser(size_t id, size_t sid) {
+      size_t connectionCount;
+
+      updateGameData(sid, [&](json* game){
+         int i = 0;
+
+         for (auto& user : game->at("users")) {
+            if (user["id"].get<size_t>() == id) {
+               (*game)["users"].erase(game->at("users").begin() + i);
+               break;
+            } i++;
+         }
+
+         connectionCount = game->at("users").size();
+      });
+
+      return connectionCount;
+   }
 
 
    void GetHandler(const Request& req, Response& res) {
 
    }
 
+   
    void PostHandler(const Request& req, Response& res) {
       std::cout << "Game: Post\n";
 
@@ -131,6 +174,8 @@ namespace RouteGame {
 
       std::cout << "Game: Action '" << action << "' from user (id: " << id << ", sid: " << sid << ")\n";
 
+
+      // Action: Connect     
       if (action == "connect") {
          std::string host = getParam(req, "host");
          std::cout << "Game: Connect action, with host " << host << "\n";
@@ -141,15 +186,56 @@ namespace RouteGame {
          answer_json(res, action, json{
             {"status", "OK"},
             {"connection_count", registerRes.connectionCount},
-            {"selected_figures", registerRes.usedFigures},
          });
          
-         sendAll(sid, action, json{
-            {"connection_count", registerRes.connectionCount},
+         sendAll(sid, id, "connection-count-update", json{
+            {"count", registerRes.connectionCount},
          });
       }
+      
+      // Action: Get-skin
+      else if (action == "get-skin") {
+         std::string skinName;
+         // search for user selected skin
+         withUser(id, [&](json user){
+            json figuresState = user["shop"]["figure"];
+            for (auto it = figuresState.begin(); it != figuresState.end(); it++) {
+               auto key = it.key();
+               auto val = it.value().get<std::string>();
+
+               if (val == "selected") {
+                  skinName = key;
+                  break;
+               }
+            }
+         });
+         // sending answer
+         answer_json(res, action, json{
+            {"status", "OK"},
+            {"skin", skinName},
+         });
+      }
+      
+      // Action: Get-connections-state
+      else if (action == "get-connections-state") {
+         json figures = json::array();
+         withGame(sid, [&](json game){
+            for (auto& user : game["users"]) {
+               std::string figure = user["figure"].get<std::string>();
+               if (figure != "")
+                  figures.push_back(figure);
+            }
+         });
+         answer_json(res, action, json{
+            {"status", "OK"},
+            {"figures", figures},
+            {"ready_count", getReadyCount(sid)},
+         });
+      }
+
+      // Action: Figure-select
       else if (action == "figure-select") {
-         std::string figureType = req.get_param_value("figure");
+         std::string figureType = getParam(req, "figure");
          
          bool figureUsed = false;
          withGame(sid, [&](json game){
@@ -168,7 +254,7 @@ namespace RouteGame {
             answer_json(res, action, json{
                {"status", "OK"},
             });
-            sendAll(sid, action, json{
+            sendAll(sid, id, action, json{
                {"status", "OK"},
                {"figure", figureType},
             });
@@ -180,6 +266,68 @@ namespace RouteGame {
             });
          }
       }
+
+      // Action: Figure-unselect
+      else if (action == "figure-unselect") {
+         std::string figureType = getParam(req, "figure");
+         
+         updateGameUser(id, sid, [&](json* user){
+            (*user)["figure"] = ""; // update user figure
+         });
+         answer_json(res, action, json{
+            {"status", "OK"},
+         });
+         sendAll(sid, id, action, json{
+            {"status", "OK"},
+            {"figure", figureType},
+         });
+      }
+      
+      // Action: Ready
+      else if (action == "ready") {
+         updateGameUser(id, sid, [&](json* user){
+            (*user)["ready"] = true;
+         });
+         answer_json(res, action, json{});
+         sendAll(sid, id, "ready-count-update", json{
+            {"count", getReadyCount(sid)},
+         });
+      }
+
+      // Action: Unready
+      else if (action == "unready") {
+         updateGameUser(id, sid, [&](json* user){
+            (*user)["ready"] = false;
+         });
+         answer_json(res, action, json{});
+         sendAll(sid, id, "ready-count-update", json{
+            {"count", getReadyCount(sid)},
+         });
+      }
+      
+      // Action: disconnect
+      else if (action == "disconnect") {
+         std::string figureName;
+         updateGameUser(id, sid, [&](json* user){
+            figureName = user->at("figure").get<std::string>();
+         });
+         
+         size_t connectionCount = deleteGameUser(id, sid);
+
+         answer_json(res, action, json{});
+         sendAll(sid, id, "figure-unselect", {
+            {"figure", figureName},
+         });
+         sendAll(sid, id, "connection-count-update", json{
+            {"count", connectionCount},
+         });
+         sendAll(sid, id, "ready-count-update", json{
+            {"count", getReadyCount(sid)},
+         });
+      }
+      
+      
    }
+   
    
 } // RouteGame

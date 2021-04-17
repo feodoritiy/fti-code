@@ -1,24 +1,40 @@
 // STOP: Before game
+const sel = 'figure-select__cell_selected',
+   otherSel = 'figure-select__cell_other-selected';
 
 $(buttonReady).click(e => {
-   buttonReady.classList.add('dn');
-   buttonNotReady.classList.remove('dn');
+   const $selected = $('.'+sel);
    
-   $('main').addClass('dn');
-   $('.game').removeClass('dn');
+   if ($selected.length > 0) {
+      buttonReady.classList.add('dn');
+      buttonNotReady.classList.remove('dn');
+      sendReady();
+   }
+   else {
+      alert('Выберите фигуру прежде чем начать игру');
+   }
+   
+   //$('main').addClass('dn');
+   //$('.game').removeClass('dn');
 });
 $(buttonNotReady).click(e => {
    buttonNotReady.classList.add('dn');
    buttonReady.classList.remove('dn');
+   sendUnready();
 });
 
+$(buttonDisconnect).click(e => {
+   sendDisconnect();
+   loadPage('main-menu');
+})
+
 $('.figure-select__cell').click(e => {
-   const $currentTarget = $(e.currentTarget),
-      sel = 'figure-select__cell_selected',
-      otherSel = 'figure-select__cell_other-selected';
+   const $currentTarget = $(e.currentTarget);
+
    if ($currentTarget.hasClass(otherSel)) return;
    if ($currentTarget.hasClass(sel)) {
       $currentTarget.removeClass(sel);
+      sendFigureUnselect(e.currentTarget.dataset.type)
       return;
    }
 
@@ -115,15 +131,19 @@ for (let color in start) {
    }
 }
 
+function getFigureWithName(figureName) {
+   return $('.figure-select__cell').toArray().find(el => el.dataset.type == figureName);
+}
 
 function otherFigureSelect(figureName) {
-   
+   const figureEl = getFigureWithName(figureName);
+   if (figureEl)
+      figureEl.classList.add('figure-select__cell_other-selected');
 }
 function otherFigureUnselect(figureName) {
-
-}
-function otherFigureChange(oldFigureName, newFigureName) {
-   
+   const figureEl = getFigureWithName(figureName);
+   if (figureEl)
+      figureEl.classList.remove('figure-select__cell_other-selected');
 }
 
 getGameSid(sid => {
@@ -131,11 +151,21 @@ getGameSid(sid => {
 });
 
 getConnectionCount(count => {
-   updateConnectionCount(count);
+   setConnectionCount(count);
 });
 
-function updateConnectionCount(count) {
+getSkin(skinName => {
+   setFigureSkin(skinName);
+});
+
+getConnectionsState(({figures: figures, ready_count: readyCount}) => {
+   setSelectedFigures(figures);
+   setReadyCount(readyCount);
+});
+
+function setConnectionCount(count) {
    connectionCount.textContent = count;
+   $('.total-count').text(count);
    
    count = +count;
 
@@ -151,6 +181,22 @@ function updateConnectionCount(count) {
          countWord = 'игроков'; break;
    };
    connectionCountWord.textContent = countWord;
+}
+
+function setFigureSkin(skinName) {
+   $('.figure-select__cell img').each((i, el) => {
+      const $figure = $(el);
+      $figure.attr('src', window[`imageFigure_${skinName}${el.parentElement.dataset.type.toUpperCase()}`].src);
+   });
+}
+
+function setReadyCount(count) {
+   $('.ready-count').text(count);
+}
+
+function setSelectedFigures(selectedFigures) {
+   for (const figureName of selectedFigures)
+      otherFigureSelect(figureName);
 }
 
 
