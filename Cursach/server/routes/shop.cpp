@@ -1,6 +1,6 @@
 #include "shop.h"
 namespace RouteShop {
-
+   
    json readUsers() {
       return File::ReadJson(File::pwd() + "/../data/users.json");
    }
@@ -89,7 +89,8 @@ namespace RouteShop {
          std::string sliderName = req.get_param_value("slider");
          std::string productName = req.get_param_value("product");
 
-         size_t productPrice = File::ReadJson(File::pwd() + "/../data/price.json")[sliderName][productName].get<size_t>();
+         json prices = File::ReadJson(pwd + "/../data/price.json");
+         size_t productPrice = prices[sliderName][productName].get<size_t>();
          size_t userAmount = (*targetUser)["amount"].get<size_t>();
          
          if (productPrice > userAmount) {

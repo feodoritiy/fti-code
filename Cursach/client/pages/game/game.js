@@ -131,30 +131,6 @@ $('.ground__cell').click(e => {
    }
 });
 
-//const start = {
-//   pinkX: [
-//      [0, 0],
-//      [1, 0],
-//      [1, 1],
-//   ],
-//   yellowO: [
-//      [2, 0],
-//      [3, 1],
-//      [2, 2],
-//   ],
-//   orangeP: [
-//      [1, 2],
-//      [3, 2],
-//      [4, 2],
-//   ],
-//};
-
-//for (let color in start) {
-//   const positions = start[color];
-//   for (let [ posX, posY ] of positions) {
-//      ground.put(posX, posY, color);
-//   }
-//}
 
 function getFigureWithName(figureName) {
    return $('.figure-select__cell').toArray().find(el => el.dataset.type == figureName);
@@ -234,6 +210,7 @@ function setSelectedFigures(selectedFigures) {
       otherFigureSelect(figureName);
 }
 
+
 const ORDER = {
    queue: [],
    els: $('.order__cell').toArray(),
@@ -257,6 +234,8 @@ const ORDER = {
       this.current.el.classList.add('order__cell_current');
    },
 };
+
+
 function startGame(order) {
    ORDER.queue = order;
    $('main').addClass('dn');
@@ -278,10 +257,15 @@ function startGame(order) {
       }
    });
 }
+
 function setStep(i, j) {
    debugger;
    ground.put(j, i, ORDER.current.data.skin);
    ORDER.next();
+}
+
+function showWin(message) {
+   alert(message);
 }
 
 

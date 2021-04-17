@@ -14,10 +14,10 @@
          },
          "figure": {
             "black": "buy",
-            "green": "selected",
+            "green": "select",
             "orange": "buy",
             "pink": "select",
-            "yellow": "buy"
+            "yellow": "selected"
          }
       }
    },

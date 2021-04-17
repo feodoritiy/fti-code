@@ -867,3 +867,202 @@ AttributeError: 'NoneType' object has no attribute 'terminate'
     storage.connection_process.terminate()
 AttributeError: 'NoneType' object has no attribute 'terminate'
 
+
+[2021-04-17 17:35:24] Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.7/http/client.py", line 1277, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1323, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1272, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1032, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.7/http/client.py", line 972, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fa7084d8c50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=1234): Max retries exceeded with url: /login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa7084d8c50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/login.py", line 10, in login
+    'password': password,
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/storage.py", line 37, in load
+    res = requests.post(f'{SERVER}{path}', data)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=1234): Max retries exceeded with url: /login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa7084d8c50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+
+[2021-04-18 00:59:38] Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.7/http/client.py", line 1369, in getresponse
+    response.begin()
+  File "/usr/lib/python3.7/http/client.py", line 310, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.7/http/client.py", line 279, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 400, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 702, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 421, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 416, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.7/http/client.py", line 1369, in getresponse
+    response.begin()
+  File "/usr/lib/python3.7/http/client.py", line 310, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.7/http/client.py", line 279, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/game.py", line 120, in send_step
+    'skin': order_data['skin'],
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/storage.py", line 54, in gameload
+    return this.load('/game', final_data)
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/storage.py", line 37, in load
+    res = requests.post(f'{SERVER}{path}', data)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+
+[2021-04-18 01:37:47] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 01:51:38] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 01:53:10] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 01:58:26] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:00:28] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:02:03] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:04:39] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:07:33] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:09:53] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 48, in cefpython_py37.V8FunctionHandler_Execute
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/logic/shop.py", line 55, in shop_buy
+    if res['status'] == 'OK':
+TypeError: 'Response' object is not subscriptable
+
+
+[2021-04-18 02:15:59] Traceback (most recent call last):
+  File "lifespan_handler.pyx", line 129, in cefpython_py37.LifespanHandler_OnBeforeClose
+  File "/media/feodoritiy/HDD/CODE/VS_C+/fti/Cursach/client/browser.py", line 97, in OnBeforeClose
+    storage.connection_process.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+

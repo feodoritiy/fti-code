@@ -15,6 +15,7 @@ def handle():
    storage.add_response_handler('ready-count-update', on_ready_count_update)
    
    storage.add_response_handler('game-start', on_game_start)
+   storage.add_response_handler('win', on_win)
    
    storage.add_response_handler('step', on_step)
 
@@ -32,6 +33,15 @@ def on_game_connect(req):
 def on_game_start(req):
    storage.add_task('startGame', req['order'])
    storage.order = req['order']
+   return '{"status": "OK"}'
+
+def on_win(req):
+   if int(req['winner']) == storage.id:
+      message = 'Вы виграли!! За победу вы получили 10 000 валюты, посетите магазин ;)'
+   else:
+      message = 'Вы проиграли. Победитель получил 10 000 валюты в качестве вознаграждения. Побеждайте, чтобы открывать скины ;)'
+   storage.add_task('showWin', message)
+   
    return '{"status": "OK"}'
 
 

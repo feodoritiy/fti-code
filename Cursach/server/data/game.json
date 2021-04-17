@@ -2209,5 +2209,350 @@
             "ready": true
          }
       ]
+   },
+   {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            1,
+            1,
+            1,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
+      "sid": 42,
+      "users": [
+         {
+            "figure": "o",
+            "host": "127.0.0.1:56913",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "t",
+            "host": "127.0.0.1:52751",
+            "id": 2,
+            "ready": true
+         }
+      ]
+   },
+   {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
+      "sid": 43,
+      "users": [
+         {
+            "figure": "p",
+            "host": "127.0.0.1:55551",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:40865",
+            "id": 2,
+            "ready": true
+         }
+      ]
+   },
+   {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
+      "sid": 44,
+      "users": [
+         {
+            "figure": "t",
+            "host": "127.0.0.1:43529",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "o",
+            "host": "127.0.0.1:33015",
+            "id": 2,
+            "ready": true
+         }
+      ]
+   },
+   {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ]
+      ],
+      "sid": 45,
+      "users": [
+         {
+            "figure": "p",
+            "host": "127.0.0.1:49727",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "x",
+            "host": "127.0.0.1:36295",
+            "id": 2,
+            "ready": true
+         }
+      ]
+   },
+   {
+      "field": [
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            2,
+            null,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            1,
+            null,
+            2,
+            null,
+            null
+         ],
+         [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null
+         ]
+      ],
+      "sid": 46,
+      "users": [
+         {
+            "figure": "x",
+            "host": "127.0.0.1:33747",
+            "id": 1,
+            "ready": true
+         },
+         {
+            "figure": "r",
+            "host": "127.0.0.1:52763",
+            "id": 2,
+            "ready": true
+         }
+      ]
    }
 ]

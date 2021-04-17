@@ -100,6 +100,19 @@ namespace RouteGame {
          }
       }
    }
+   void updateUser(size_t id, std::function<void(json& user)> callback) {
+      File* userFile = new File(pwd + "/../data/users.json");
+      json users = userFile->readJson();
+
+      for (auto& user : users) {
+         if (user["id"].get<size_t>() == id) {
+            callback(user);
+            break;
+         }
+      }
+
+      userFile->writeJson(users, 3);
+   }
    
    std::string getUserSkin(size_t id) {
       std::string skinName;
@@ -171,6 +184,127 @@ namespace RouteGame {
          field[i][j] = callback(&field[i][j]);
       });
    }
+   
+   struct CheckWinResult {
+      bool isWin;
+      size_t id;
+   };
+   class CheckCell {
+   public:
+      bool isValue;
+      size_t value;
+
+      CheckCell(json field, size_t i, size_t j) {
+         this->isValue = !field[i][j].is_null();
+         if (this->isValue) {
+            this->value = field[i][j].get<size_t>();
+         }
+      }
+   };
+   bool operator== (CheckCell& lhs, CheckCell& rhs) {
+      if (!lhs.isValue)
+         return false;
+      if (!rhs.isValue)
+         return false;
+      return lhs.value == rhs.value;
+   }
+   CheckWinResult checkWin(size_t sid) {
+      using CheckLine = std::vector<CheckCell>;
+      using CheckLines = std::vector<CheckLine>;
+      
+      const int winSize = 3;
+      
+      auto searchSequence = [&](CheckLines lines) {
+         CheckLine line;
+
+         for (auto lineIt = lines.begin(); lineIt != lines.end(); lineIt++) {
+            int sequence = 0;
+
+            line = *lineIt;
+            CheckCell lastId = line[0];
+            
+            for (auto& currId : line) {
+               if (currId == lastId) {
+                  sequence++;
+               } else {
+                  sequence = 1;
+                  lastId = currId;
+               }
+
+               if (sequence >= winSize) {
+                  struct CheckWinResult res = {true, currId.value};
+                  return res;
+               }
+            }
+         }
+
+         struct CheckWinResult res = {false, 0};
+         return res;
+      };
+
+      auto getDiag = [&](json field, int startI, int startJ, int boundI, int boundJ, bool reverse = false){
+         CheckLine diag;
+
+         int differI = boundI - startI;
+         int differJ = boundJ - startJ;
+
+         if (differI < 0) differI *= -1;
+         if (differJ < 0) differJ *= -1;
+
+         int minDiffer = differI < differJ ? differI : differJ;
+         
+         for (int c = 0; c < minDiffer; c++) {
+            int i = startI + c,
+               j = startJ + (reverse ? -c : c);
+            diag.push_back(*new CheckCell(field, i, j));
+         }
+
+         return diag;
+      };
+      json field = getGameData(sid)["field"];
+      
+      CheckLines rows;
+      for (int i = 0; i < 5; i++) {
+         CheckLine row;
+         for (int j = 0; j < 8; j++) {
+            row.push_back(*new CheckCell(field, i, j));
+         }
+         rows.push_back(row);
+      }
+      auto rowsRes = searchSequence(rows);
+      if (rowsRes.isWin) return rowsRes;
+
+      CheckLines cols;
+      for (int j = 0; j < 8; j++) {
+         CheckLine col;
+         for (int i = 0; i < 5; i++) {
+            col.push_back(*new CheckCell(field, i, j));
+         }
+         cols.push_back(col);
+      }
+      auto colsRes = searchSequence(cols);
+      if (colsRes.isWin) return colsRes;
+      
+      CheckLines mainDiags;
+      for (int i = 0; i < 5; i++)
+         mainDiags.push_back(getDiag(field, i, 0, 5, 8));
+      for (int j = 1; j < 8; j++)
+         mainDiags.push_back(getDiag(field, 0, j, 5, 8));
+      auto mainDiagsRes = searchSequence(mainDiags);
+      if (mainDiagsRes.isWin) return mainDiagsRes;
+
+      CheckLines subDiags;
+      for (int i = 0; i < 5; i++)
+         subDiags.push_back(getDiag(field, i, 7, 5, -1, true));
+      for (int j = 0; j < 7; j++)
+         subDiags.push_back(getDiag(field, 0, j, 5, -1, true));
+      auto subDiagsRes = searchSequence(subDiags);
+      if (subDiagsRes.isWin) return subDiagsRes;
+            
+      struct CheckWinResult res = {false, 0};
+      return res;
+   }
+
 
    struct registerGameUserResult {
       size_t connectionCount;
@@ -277,7 +411,7 @@ namespace RouteGame {
          updateCell(sid, i, j, [&](json* cell){
             if (cell->is_null()) {
                return id;
-            }
+            } // warning because return not always
          });
          
          sendAll(sid, id, action, json{
@@ -287,6 +421,17 @@ namespace RouteGame {
          answer_json(res, action, json{
             {"status", "OK"},
          });
+         auto winInfo = checkWin(sid);
+         if (winInfo.isWin) {
+            sendAll(sid, id, "win", json{
+               {"winner", winInfo.id},
+            });
+            updateUser(winInfo.id, [&](json& user){
+               auto amount = user.at("amount").get<size_t>();
+               user.at("amount") = amount + 10000;
+            });
+         }
+         std::cout << "Game: Step respond\n";
       }
       
       // Action: Get-skin
