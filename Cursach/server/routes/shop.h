@@ -7,7 +7,7 @@ using json = nlohmann::json;
 #include <File/File.h>
 
 namespace RouteShop {
-   std::string pwd = File::pwd();
+   extern std::string pwd;
    json readUsers();
    void saveUsers(json users);
    void GetHandler(const Request& req, Response& res);

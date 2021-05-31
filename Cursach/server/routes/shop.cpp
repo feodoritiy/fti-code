@@ -1,6 +1,7 @@
 #include "shop.h"
 namespace RouteShop {
-   
+   std::string pwd = File::pwd();
+
    json readUsers() {
       return File::ReadJson(File::pwd() + "/../data/users.json");
    }

@@ -38,8 +38,8 @@
             "black": "buy",
             "green": "buy",
             "orange": "buy",
-            "pink": "selected",
-            "yellow": "buy"
+            "pink": "select",
+            "yellow": "selected"
          }
       }
    }
